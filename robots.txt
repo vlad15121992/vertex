@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vlad15121992.github.io/vertex/sitemap.xml

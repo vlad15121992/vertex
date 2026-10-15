@@ -75,8 +75,8 @@ form.addEventListener('submit', event => {
   if(name.length < 2){form.elements.name.setCustomValidity('Вкажіть ім’я (щонайменше 2 символи).');form.elements.name.reportValidity();return;}
   const message = form.elements.message.value.trim();
   $('#request-text').value = [`Вітаю! Хочу обговорити проєкт із VERTEX.`, ``, `Ім’я: ${name}`, `Телефон: ${phone.value.trim()}`, `Тип проєкту: ${form.elements.service.value}`, ...(message ? [``,message] : [])].join('\n');
-  $('#telegram-request').href = `https://t.me/VishnyaMi?text=${encodeURIComponent($('#request-text').value)}`;
-  $('#copy-status').textContent = 'Заявка ще не надіслана. Відкрийте Telegram і надішліть її @VishnyaMi.';
+  $('#telegram-request').href = `https://t.me/Vertexbuild?text=${encodeURIComponent($('#request-text').value)}`;
+  $('#copy-status').textContent = 'Заявка ще не надіслана. Відкрийте Telegram і надішліть її @Vertexbuild.';
   $('#copy-request').firstChild.textContent = 'Скопіювати текст';
   openDialog(requestDialog);
 });

@@ -158,7 +158,7 @@ if(i===3)$('#step-content').innerHTML=section('Приміщення вашого
 if(i===4)$('#step-content').innerHTML=section('Ближчі вам напрями',styleGallery(),'Можна обрати кілька. Це згенеровані приклади стилів, а не виконані роботи VERTEX.')+visualizationDetails()+section('Кольори та настрій',field('Що вам подобається?','style.palette',{type:'textarea',maxlength:1400,placeholder:'Світлий чи темний інтер’єр, теплі чи холодні відтінки, дерево, контрасти…'}))+section('Референси',upload('style','Додати фото інтер’єрів')+`<div class="spaced">${field('Посилання на Pinterest, добірку чи фото','style.links',{type:'textarea',maxlength:2500,placeholder:'Кожне посилання — з нового рядка. Опишіть, що саме подобається.'})}</div>`)+section('Подобається / не підходить',`<div class="grid">${field('Що хочеться повторити','style.likes',{type:'textarea',maxlength:1800,placeholder:'Наприклад, приховані двері, тепле дерево, багато світла…'})}${field('Чого точно не хочете','style.dislikes',{type:'textarea',maxlength:1800,placeholder:'Глянець, відкриті полиці, холодне світло…'})}</div>`)+section('Що потрібно зберегти',field('Меблі, техніка, предмети','style.existing',{type:'textarea',maxlength:1800,placeholder:'Вкажіть габарити, моделі та додайте їх у файли за потреби.'}));
 if(i===5)$('#step-content').innerHTML=`<div class="notice"><strong>Клієнту не потрібно знати технічні норми.</strong> Вкажіть сценарії й обладнання. Прив’язки, навантаження та траси перевіряються під час підготовки проєкту.</div>`+section('Що потрібно бачити у 3D?',checks('systems.modelDetail',MODEL_DETAIL),'Оберіть потрібну деталізацію моделі. Остаточний склад погодимо до початку робіт.')+systemsMarkup()+technicalDetails();
 if(i===6)$('#step-content').innerHTML=section('Покриття підлоги',checks('materials.floor',['Інженерна дошка / паркет','Вініл','Ламінат','Керамограніт / плитка','Мікроцемент','Потрібна рекомендація']))+section('Стіни',checks('materials.walls',['Фарбування','Декоративна штукатурка','Шпалери','Дерево / панелі','Плитка у вологих зонах','Потрібна рекомендація']))+section('Що важливіше у виборі?',checks('materials.priority',['Легко прибирати','Зносостійкість','Натуральні матеріали','Стійкість до тварин','Тактильність і фактури','Вкластися в бюджет']))+section('Обмеження й комплектація',`<div class="grid">${field('Хто підбирає та замовляє матеріали?','materials.sourcing',{options:['Не визначилися','Потрібна допомога VERTEX','Підбираємо самі','Вже є постачальники / майстри']})}${field('Улюблені бренди / обмеження','materials.preferences',{placeholder:'Бренди, алергії, матеріали, яких уникаєте'})}</div><div class="spaced">${field('Побажання до меблів і оздоблення','materials.notes',{type:'textarea',maxlength:2500,placeholder:'Індивідуальні меблі, готові рішення, категорія матеріалів, речі, які вже придбали…'})}</div>`)+section('Додаткові матеріали',upload('additional','Додати фото об’єкта, схеми чи специфікації'))+organizationDetails();
-if(i===7)$('#step-content').innerHTML=`<div id="review-content">${reviewMarkup()}</div><div class="send-panel" id="send-panel"><label class="check consent"><input type="checkbox" id="consent"><span>Погоджуюсь на обробку даних, щоб VERTEX опрацював бриф і зв’язався зі мною.</span></label><button class="button primary send-button" data-action="send">Надіслати бриф VERTEX <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><div class="send-progress" id="send-progress" hidden><div class="send-bar"><i id="send-bar"></i></div><p id="send-status">Надсилаємо відповіді…</p></div><div class="send-error" id="send-error" role="alert" hidden><b>Не вдалося надіслати</b><span>Відповіді й файли збережені. Спробуйте ще раз або передайте бриф вручну — завантажте архів і надішліть його в Telegram.</span></div><p class="privacy-note">Відповіді й файли (${files.length}) потраплять напряму до VERTEX. Копію можна зберегти собі нижче.</p></div><div class="review-actions"><button class="button secondary" data-action="zip">Завантажити копію з файлами</button><button class="button secondary" data-action="print">Друк / зберегти PDF</button><button class="button secondary" data-action="copy">Скопіювати текст</button><button class="button secondary" data-action="telegram">Передати в Telegram вручну ↗</button></div><div class="notice"><strong>Наступний крок — уточнення завдання з VERTEX.</strong> Обміри, остаточний склад робочих креслень, формат 3D-моделі, строки й вартість узгоджуються перед початком робіт.</div>`;
+if(i===7)$('#step-content').innerHTML=`<div id="review-content">${reviewMarkup()}</div><div class="send-panel" id="send-panel"><label class="check consent"><input type="checkbox" id="consent"><span>Погоджуюсь на обробку даних, щоб VERTEX опрацював бриф і зв’язався зі мною.</span></label><button class="button primary send-button" data-action="send">Надіслати бриф VERTEX <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><div class="send-progress" id="send-progress" hidden><div class="send-bar"><i id="send-bar"></i></div><p id="send-status">Надсилаємо відповіді…</p></div><div class="send-error" id="send-error" role="alert" hidden><b>Не вдалося надіслати</b><span>Відповіді й файли збережені. Спробуйте ще раз або передайте бриф вручну — завантажте архів і надішліть його в Telegram.</span></div><p class="privacy-note">Відповіді й файли (${files.length}) потраплять напряму до VERTEX. Копію можна зберегти собі нижче.</p></div><div class="review-actions"><button class="button secondary" data-action="pdf">Завантажити бриф у PDF</button><button class="button secondary" data-action="zip">Завантажити копію з файлами</button><button class="button secondary" data-action="copy">Скопіювати текст</button><button class="button secondary" data-action="telegram">Передати в Telegram вручну ↗</button></div><div class="notice"><strong>Наступний крок — уточнення завдання з VERTEX.</strong> Обміри, остаточний склад робочих креслень, формат 3D-моделі, строки й вартість узгоджуються перед початком робіт.</div>`;
 updateAside();bindUploads();window.onStepRendered?.(i);}
 const EXTRA_SERVICES=['Повні інженерні розрахунки та робочі проєкти мереж','Конструктив / втручання в несучі конструкції','Фасад, покрівля або благоустрій ділянки','Виробничі креслення меблів','Детальний проєкт автоматизації / розумного дому','Авторський нагляд і виїзди під час ремонту','Комплектація, закупівлі та детальний кошторис ремонту'];
 const STYLE_EXAMPLES=[
@@ -468,7 +468,24 @@ function createModel() {
     const raw = Math.min(1, (now - lastT) / 1000), dt = Math.min(.05, raw); lastT = now;
     if (!visible || document.hidden || !cfg) return;
     // Плавність рахуємо від реального часу, щоб модель «доросла» навіть при рідких кадрах
-    const k = reduceMotion ? 1 : 1 - Math.pow(.02, raw);
+    draw(now, dt, reduceMotion ? 1 : 1 - Math.pow(.02, raw));
+  }
+
+  // Знімок готової моделі для обкладинки PDF: без анімації, у високій роздільності
+  function snapshot(c) {
+    update(c);
+    night = c.stage >= 7 ? 1 : 0;
+    lerpColors.forEach(([color, slot]) => color.copy(targetPal[slot]));
+    const saved = { theta, phi, ratio: renderer.getPixelRatio() }, w = 1400, h = 760;
+    renderer.setPixelRatio(1); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    renderer.setClearColor(0x111210, 1); theta = .9; phi = 1.08;
+    draw(performance.now(), 0, 1);
+    const url = canvas.toDataURL('image/jpeg', .9);
+    renderer.setClearColor(0x000000, 0); renderer.setPixelRatio(saved.ratio); theta = saved.theta; phi = saved.phi; resize();
+    return url;
+  }
+
+  function draw(now, dt, k) {
     for (const p of Object.values(parts)) {
       p.show += (p.target - p.show) * k; p.alpha += (p.alphaTarget - p.alpha) * k;
       p.g.visible = p.show > .01;
@@ -497,7 +514,7 @@ function createModel() {
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
-  return { update, resize };
+  return { update, resize, snapshot };
 }
 
 function refreshModel(stage) {
@@ -550,13 +567,158 @@ $('#welcome-start').addEventListener('click', () => {
 });
 document.body.style.overflow = 'hidden';
 
+/* ---------- Фірмовий PDF брифу ---------- */
+const PDF_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js';
+const FONT_BASE = 'https://vertexbuild.pro/assets/';
+const C = { dark: '#111210', lime: '#d8f530', ink: '#151612', muted: '#6b6d64', line: '#e4e3dc', paper: '#f5f4ef', soft: '#2b2d26' };
+let pdfReady = null;
+
+// Бібліотеку й шрифти Manrope вантажимо лише тоді, коли PDF справді потрібен
+function loadPdf() {
+  return pdfReady ||= (async () => {
+    if (!window.pdfMake) await new Promise((ok, fail) => { const s = document.createElement('script'); s.src = PDF_LIB; s.onload = ok; s.onerror = fail; document.head.append(s); });
+    const b64 = async file => {
+      const bytes = new Uint8Array(await (await fetch(FONT_BASE + file)).arrayBuffer());
+      let bin = ''; for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+      return btoa(bin);
+    };
+    const [regular, semi, heavy] = await Promise.all(['manrope-0.ttf', 'manrope-2.ttf', 'manrope-4.ttf'].map(b64));
+    pdfMake.vfs = { 'm400.ttf': regular, 'm600.ttf': semi, 'm800.ttf': heavy };
+    pdfMake.fonts = {
+      Manrope: { normal: 'm400.ttf', bold: 'm600.ttf', italics: 'm400.ttf', bolditalics: 'm600.ttf' },
+      ManropeX: { normal: 'm800.ttf', bold: 'm800.ttf', italics: 'm800.ttf', bolditalics: 'm800.ttf' },
+    };
+  })().catch(error => { pdfReady = null; throw error; });
+}
+
+function briefSections() {
+  const o = state.object, p = state.people, s = state.style, sys = state.systems, m = state.materials, c = state.contact, d = state.projectDetails;
+  const list = v => Array.isArray(v) ? v.join(' · ') : v;
+  return [
+    ['Контакти', [['Ім’я', c.name], ['Телефон', c.phone], ['Як зв’язатися', [c.preferred, c.handle].filter(Boolean).join(' · ')], ['Зручний час', c.time], ['Коментар', c.comments]]],
+    ['Об’єкт і склад проєкту', [['Тип житла', o.type], ['Обсяг', o.scope], ['Місто', o.city], ['Район / адреса', o.address], ['Площа', o.area && `${o.area} м²`], ['Рівнів', o.floors], ['Стан', o.condition], ['Висота / геометрія', d.ceiling], ['Перепланування', d.redevelopment], ['Мокрі зони', d.wetZones], ['Потрібні результати', list(o.deliverables)], ['Обмір', o.needsMeasure ? `Потрібен виїзний обмір (${d.visit})` : ''], ['Бюджет', o.budget ? `${Number(o.budget).toLocaleString('uk-UA')} грн · ${o.budgetScope}` : ''], ['Строк', o.deadline], ['Важливо знати', o.notes]]],
+    ['Люди й побут', [['Дорослі', p.adults], ['Діти', p.children], ['Тварини', p.pets], ['Сценарії життя', list(p.lifestyle)], ['Зберігання', p.storage], ['Доступність', p.accessibility], ['На перспективу', p.future]]],
+    ['Приміщення', null],
+    ['Стиль і побажання', [['Напрями', list(s.styles)], ['Деталізація візуалізації', d.visualDetail], ['Ракурсів на приміщення', d.views], ['Кольори й настрій', s.palette], ['Подобається', s.likes], ['Не підходить', s.dislikes], ['Референси', s.links], ['Зберігаємо', s.existing]]],
+    ['Комунікації й техніка', [['Деталізація 3D', list(sys.modelDetail)], ['Формат файлів', d.modelFormat], ['Додаткові задачі', list(d.extraServices)], ['Електрика', sys.electricState], ['Потужність', sys.power && `${sys.power} кВт`], ['Світло й лінії', list(sys.circuits)], ['Сценарії й точки', sys.electricNotes], ['Вода / каналізація', sys.waterState], ['Прилади', sys.waterNotes], ['Опалення', sys.heatType], ['Клімат', list(sys.climate)], ['Де потрібен клімат', sys.heatNotes], ['Мережі й безпека', list(sys.smart)], ['Автоматизація', sys.smartNotes], ['Техніка й габарити', sys.equipment]]],
+    ['Матеріали й організація', [['Підлога', list(m.floor)], ['Стіни', list(m.walls)], ['Пріоритети', list(m.priority)], ['Комплектація', m.sourcing], ['Бренди / обмеження', m.preferences], ['Меблі й оздоблення', m.notes], ['Варіантів планування', d.variants], ['Раундів правок', d.revisions], ['Темп роботи', d.urgency]]],
+  ];
+}
+
+function roomPlanSvg(r) {
+  const L = parseFloat(r.length), W = parseFloat(r.width);
+  if (!(L > 0 && W > 0)) return '<svg width="110" height="80" viewBox="0 0 110 80"><rect x="6" y="6" width="98" height="68" fill="none" stroke="#c9c8bf" stroke-dasharray="4 3"/></svg>';
+  const s = Math.min(96 / L, 66 / W), w = L * s, h = W * s, x = (110 - w) / 2, y = (80 - h) / 2, door = Math.min(10, w * .3, h * .4);
+  return `<svg width="110" height="80" viewBox="0 0 110 80"><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#d8f530" fill-opacity=".35" stroke="#151612" stroke-width="1.6"/><path d="M${x + 6} ${y + h}V${y + h - door}A${door} ${door} 0 0 1 ${x + 6 + door} ${y + h}" fill="none" stroke="#6b6d64" stroke-width=".8" stroke-dasharray="2 2"/></svg>`;
+}
+
+async function buildPdf() {
+  await loadPdf();
+  const o = state.object, c = state.contact, date = new Date().toLocaleDateString('uk-UA');
+  const has = v => v !== undefined && v !== null && String(v).trim() !== '';
+  let cover3d = null;
+  try { cover3d = model?.snapshot(modelConfig(7)); } catch {}
+
+  const kvLayout = { hLineWidth: (i, node) => (i === 0 || i === node.table.body.length ? 0 : .6), vLineWidth: () => 0, hLineColor: () => C.line, paddingTop: () => 6, paddingBottom: () => 6, paddingLeft: () => 0, paddingRight: () => 10 };
+  const kv = rows => ({ table: { widths: [150, '*'], body: rows.map(([k, v]) => [{ text: k, style: 'k' }, { text: String(v), style: 'v' }]) }, layout: kvLayout });
+  const heading = (n, title) => ({
+    headlineLevel: 1, margin: [0, 24, 0, 10],
+    table: { widths: [28, '*'], body: [[{ text: String(n).padStart(2, '0'), style: 'num', fillColor: C.lime, alignment: 'center', margin: [0, 5, 0, 4] }, { text: title, style: 'h2', margin: [10, 1, 0, 0] }]] },
+    layout: 'noBorders',
+  });
+  const fact = (label, value) => ({ stack: [{ text: label.toUpperCase(), fontSize: 7, color: '#8b8d84', characterSpacing: 1 }, { text: has(value) ? String(value) : '—', fontSize: 12, bold: true, color: '#f4f4ee', margin: [0, 4, 0, 0] }], margin: [10, 10, 10, 10] });
+
+  const content = [];
+  // Обкладинка
+  content.push(
+    { columns: [{ text: [{ text: 'VERTEX', font: 'ManropeX', fontSize: 26, color: '#f4f4ee' }, { text: '.', font: 'ManropeX', fontSize: 26, color: C.lime }] }, { text: `${date}\nvertexbuild.pro`, alignment: 'right', fontSize: 9, color: '#8b8d84', margin: [0, 6, 0, 0] }] },
+    { text: 'БРИФ ПРОЄКТУ', color: C.lime, fontSize: 10, bold: true, characterSpacing: 2.5, margin: [0, 54, 0, 8] },
+    { text: `${o.type || 'Ваш простір'}${has(o.area) ? ` · ${o.area} м²` : ''}`, font: 'ManropeX', fontSize: 38, color: '#f4f4ee', lineHeight: 1 },
+    { text: [o.city, o.scope].filter(has).join(' · ') || ' ', fontSize: 13, color: '#cfd0c8', margin: [0, 8, 0, 0] },
+  );
+  if (cover3d) content.push({ image: cover3d, width: 515, margin: [0, 22, 0, 18] }); else content.push({ text: ' ', margin: [0, 40, 0, 0] });
+  content.push({
+    table: { widths: ['*', '*', '*'], body: [
+      [fact('Клієнт', c.name), fact('Контакт', c.phone || c.handle), fact('Бюджет', has(o.budget) ? `${Number(o.budget).toLocaleString('uk-UA')} грн` : '')],
+      [fact('Строк', o.deadline), fact('Приміщень', String(state.rooms.length)), fact('Файлів', String(files.length))],
+    ] },
+    layout: { hLineWidth: () => .6, vLineWidth: () => .6, hLineColor: () => C.soft, vLineColor: () => C.soft },
+  });
+  content.push({ text: '', pageBreak: 'after' });
+
+  // Розділи
+  briefSections().forEach(([title, rows], i) => {
+    content.push(heading(i + 1, title));
+    if (rows) {
+      const filled = rows.filter(([, v]) => has(v));
+      content.push(filled.length ? kv(filled) : { text: 'Не заповнено — уточнимо під час розмови.', style: 'k' });
+      return;
+    }
+    if (!state.rooms.length) { content.push({ text: 'Приміщення ще не додано.', style: 'k' }); return; }
+    state.rooms.forEach((r, n) => {
+      const dims = [r.length && `${r.length} м`, r.width && `${r.width} м`, r.height && `h ${r.height} м`].filter(Boolean).join(' × ');
+      const area = r.area || (r.length && r.width ? (+r.length * +r.width).toFixed(1) : '');
+      const details = [['Розміри', dims], ['Площа', area && `${area} м²`], ['Наповнення', r.needs], ['Комунікації', (r.systems || []).join(' · ')], ['Для моделі й креслень', r.notes]].filter(([, v]) => has(v));
+      content.push({
+        unbreakable: true, margin: [0, n ? 10 : 0, 0, 0],
+        table: { widths: [122, '*'], body: [[
+          { svg: roomPlanSvg(r), width: 110, margin: [6, 8, 6, 8] },
+          { stack: [{ text: `${String(n + 1).padStart(2, '0')} · ${r.name || r.type}`, font: 'ManropeX', fontSize: 12, margin: [0, 0, 0, 2] }, { text: r.type, style: 'k', margin: [0, 0, 0, 4] }, details.length ? kv(details) : { text: 'Деталі уточнимо на обмірі.', style: 'k' }], margin: [4, 10, 10, 8] },
+        ]] },
+        layout: { hLineWidth: () => 0, vLineWidth: () => 0, fillColor: () => C.paper },
+      });
+    });
+  });
+
+  // Що уточнити й вкладення
+  const questions = missingItems();
+  content.push(heading(8, 'Що уточнити перед стартом'), {
+    table: { widths: [3, '*'], body: [[{ text: '', fillColor: C.lime }, { ul: questions, fontSize: 10, margin: [12, 10, 12, 10], color: C.ink }]] },
+    layout: { hLineWidth: () => 0, vLineWidth: () => 0, fillColor: (row, node, col) => (col === 1 ? '#f3f7d9' : null) },
+  });
+  content.push(heading(9, 'Вкладення'), files.length
+    ? kv(files.map(f => [({ plan: 'План / обміри', style: 'Референси стилю', additional: 'Додаткові матеріали' })[f.zone] || 'Файл', `${f.name} · ${(f.size / 1024 / 1024).toFixed(1)} МБ`]))
+    : { text: 'Файлів немає.', style: 'k' });
+  content.push({ text: 'Попередній бриф. Обміри, прив’язки мереж, технічні рішення, склад креслень, строки й вартість уточнюються з VERTEX перед початком робіт.', fontSize: 8, color: C.muted, margin: [0, 26, 0, 0] });
+
+  const doc = {
+    pageSize: 'A4', pageMargins: [40, 64, 40, 54],
+    info: { title: `VERTEX — бриф: ${c.name || ''}`, author: 'VERTEX', subject: 'Бриф проєкту' },
+    background: page => page === 1 ? { canvas: [{ type: 'rect', x: 0, y: 0, w: 595.28, h: 841.89, color: C.dark }] } : null,
+    header: page => page === 1 ? null : {
+      margin: [40, 24, 40, 0],
+      stack: [
+        { columns: [{ text: [{ text: 'VERTEX', font: 'ManropeX', fontSize: 11 }, { text: '.', font: 'ManropeX', fontSize: 11, color: '#9fb51c' }] }, { text: `Бриф · ${c.name || ''} · ${date}`, alignment: 'right', fontSize: 8, color: C.muted, margin: [0, 2, 0, 0] }] },
+        { canvas: [{ type: 'line', x1: 0, y1: 7, x2: 515, y2: 7, lineWidth: 1.2, lineColor: C.lime }] },
+      ],
+    },
+    footer: (page, count) => page === 1
+      ? { text: 'vertexbuild.pro · Telegram @Vertexbuild', alignment: 'center', fontSize: 8, color: '#8b8d84', margin: [0, 18, 0, 0] }
+      : { columns: [{ text: 'vertexbuild.pro', fontSize: 8, color: C.muted }, { text: `${page} / ${count}`, alignment: 'right', fontSize: 8, color: C.muted }], margin: [40, 20, 40, 0] },
+    pageBreakBefore: (node, following) => node.headlineLevel === 1 && following.length < 2,
+    content,
+    defaultStyle: { font: 'Manrope', fontSize: 10, color: C.ink, lineHeight: 1.25 },
+    styles: { k: { fontSize: 9, color: C.muted }, v: { fontSize: 10 }, h2: { font: 'ManropeX', fontSize: 16 }, num: { font: 'ManropeX', fontSize: 11, color: C.dark } },
+  };
+  return new Promise(resolve => pdfMake.createPdf(doc).getBlob(resolve));
+}
+const pdfName = () => `VERTEX_brief_${(state.contact.name || 'client').replace(/[^\p{L}\p{N}]+/gu, '_').slice(0, 40)}_${new Date().toISOString().slice(0, 10)}.pdf`;
+
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-action="pdf"]'); if (!b) return;
+  const label = b.textContent; b.disabled = true; b.textContent = 'Формуємо PDF…';
+  try { download(pdfName(), await buildPdf()); toast('PDF брифу збережено'); }
+  catch (error) { console.error(error); toast('Не вдалося сформувати PDF. Спробуйте ще раз.'); }
+  finally { b.disabled = false; b.textContent = label; }
+});
+
 /* ---------- Надсилання брифу ---------- */
 function showSuccess() {
   const name = (state.contact.name || '').split(' ')[0];
   ['#step-title', '#step-intro', '#actions', '#mobile-model'].forEach(s => $(s).hidden = true);
   $('#progress-fill').style.width = '100%'; $('#progress-label').textContent = 'Надіслано';
   document.querySelectorAll('.step-button').forEach(b => { b.classList.add('complete'); b.removeAttribute('aria-current'); });
-  $('#step-content').innerHTML = `<section class="success"><p class="success-kicker">БРИФ НАДІСЛАНО</p><h1>${name ? esc(name) + ', дякуємо!' : 'Дякуємо!'}<br>Ваш простір уже у VERTEX.</h1><p>Михайло отримав відповіді${files.length ? ` і ${files.length} файл(ів)` : ''}. Далі — розмова, обміри й перші рішення.</p><div class="model-host" id="success-model"></div><div class="success-steps"><div><b>01</b><p>Зв’яжемося протягом робочого дня, щоб уточнити деталі.</p></div><div><b>02</b><p>Узгодимо обміри та виїзд на об’єкт.</p></div><div><b>03</b><p>Підготуємо склад робіт, строки й вартість проєкту.</p></div></div><div class="review-actions"><button class="button secondary" data-action="zip">Зберегти копію з файлами</button><a class="button secondary" href="https://vertexbuild.pro/">На сайт VERTEX</a></div></section>`;
+  $('#step-content').innerHTML = `<section class="success"><p class="success-kicker">БРИФ НАДІСЛАНО</p><h1>${name ? esc(name) + ', дякуємо!' : 'Дякуємо!'}<br>Ваш простір уже у VERTEX.</h1><p>Михайло отримав відповіді${files.length ? ` і ${files.length} файл(ів)` : ''}. Далі — розмова, обміри й перші рішення.</p><div class="model-host" id="success-model"></div><div class="success-steps"><div><b>01</b><p>Зв’яжемося протягом робочого дня, щоб уточнити деталі.</p></div><div><b>02</b><p>Узгодимо обміри та виїзд на об’єкт.</p></div><div><b>03</b><p>Підготуємо склад робіт, строки й вартість проєкту.</p></div></div><div class="review-actions"><button class="button secondary" data-action="pdf">Завантажити бриф у PDF</button><button class="button secondary" data-action="zip">Зберегти копію з файлами</button><a class="button secondary full" href="https://vertexbuild.pro/">На сайт VERTEX</a></div></section>`;
   $('#aside-model').innerHTML = '';
   placeModel(); refreshModel(7);
   scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
@@ -567,18 +729,28 @@ async function sendBrief(button) {
   if (!consent.checked) { consent.closest('label').classList.add('invalid'); consent.focus(); toast('Підтвердьте згоду на обробку даних'); return; }
   consent.closest('label').classList.remove('invalid');
   button.disabled = true; $('#send-error').hidden = true; $('#send-progress').hidden = false;
-  const total = 1 + files.length; let done = 0;
+  const total = 2 + files.length; let done = 0;
   const step = text => { done++; $('#send-bar').style.width = `${done / total * 100}%`; if (text) $('#send-status').textContent = text; };
   try {
+    // Спершу збираємо фірмовий PDF; якщо не вийде — бриф піде текстом, щоб нічого не загубити
+    $('#send-status').textContent = 'Формуємо PDF брифу…';
+    let pdf = null;
+    try { pdf = await buildPdf(); } catch (error) { console.error(error); }
     $('#send-status').textContent = 'Надсилаємо відповіді…';
     let id = 'demo';
     if (API_URL) {
-      const payload = { text: briefText(), brief: state, files: files.map(({ name, size, type, zone }) => ({ name, size, type, zone })), questions: missingItems() };
+      const payload = { text: briefText(), pdf: Boolean(pdf), brief: state, files: files.map(({ name, size, type, zone }) => ({ name, size, type, zone })), questions: missingItems() };
       const res = await fetch(`${API_URL}/brief`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || res.status);
       id = data.id;
     } else await wait(900);
+    step('Надсилаємо PDF…');
+    if (pdf && API_URL) {
+      const body = new FormData(); body.append('id', id); body.append('zone', 'brief'); body.append('file', pdf, pdfName());
+      const res = await fetch(`${API_URL}/file`, { method: 'POST', body });
+      if (!res.ok) throw new Error('pdf');
+    }
     step(files.length ? `Файли: 0 з ${files.length}` : 'Готово');
     // Файли йдуть по одному, щоб великий архів не впав цілим
     for (let k = 0; k < files.length; k++) {

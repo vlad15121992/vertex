@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111210"><meta name="description" content="Бриф VERTEX для старту проєкту: простір, кімнати, стиль, комунікації та матеріали.">
+<meta name="robots" content="noindex">
+<title>Клієнтський бриф — VERTEX</title>
+<link rel="stylesheet" href="https://vertexbuild.pro/assets/fonts.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#111210;--fg:#f4f4ee;--muted:#a4a69e;--line:#3b3d35;--accent:#d8f530;--panel:#171813;--danger:#ffb3a7;--font:'Manrope',Arial,Helvetica,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font)}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-decoration:none}button{color:inherit}button:disabled{opacity:.45;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}button{border:0}input,select,textarea{min-width:0;max-width:100%}input[type=number]{appearance:textfield}input[type=checkbox],input[type=radio]{accent-color:var(--accent);width:19px;height:19px;flex-shrink:0;margin:0}input[type=file]{max-width:100%}[hidden]{display:none!important}h1,h2,h3,p{margin:0}svg{display:block}.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.shell{max-width:1560px;padding:0 44px;margin:auto}.header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:24px}.brand{font-size:33px;font-weight:800;letter-spacing:-1.8px}.brand span{color:var(--accent)}.header nav{display:flex;gap:32px;font-size:14px;align-items:center}.header nav .active{padding:12px 0 10px;color:var(--accent);border-bottom:2px solid var(--accent)}.subtle-link{color:var(--muted)}.demo-tools{display:flex;gap:18px;align-items:center}.demo-tools small{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}.text-button{background:none;padding:8px 0;text-decoration:underline;text-underline-offset:4px;color:var(--fg);font-size:13px}.progress{display:flex;align-items:center;gap:20px;height:44px}.progress-track{height:2px;background:var(--line);flex:1}.progress-fill{height:2px;background:var(--accent);transition:width .2s}.progress-label{font-size:12px;white-space:nowrap;color:var(--muted)}.layout{display:grid;grid-template-columns:238px minmax(0,1fr) 280px;align-items:start}.steps{position:sticky;top:18px;padding:24px 28px 32px 2px}.back-link{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin:0 0 32px}.steps h2{font-size:27px;line-height:1.2;font-weight:500;letter-spacing:-.7px;margin-bottom:35px}.steps ol{list-style:none;margin:0;padding:0}.steps li{position:relative;padding-bottom:31px}.steps li:not(:last-child):after{content:"";position:absolute;left:18px;top:43px;height:22px;width:1px;background:var(--line)}.step-button{display:flex;align-items:center;gap:20px;background:none;text-align:left;width:100%;padding:0;color:var(--muted)}.step-number{width:38px;height:38px;border:1px solid #53564a;display:grid;place-items:center;font-size:12px}.step-button[aria-current=step]{color:var(--fg)}.step-button[aria-current=step] .step-number{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}.step-button.complete .step-number{color:var(--accent);border-color:var(--accent)}.main{border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:800px;padding:32px 40px 28px;min-width:0}.step-heading{font-size:clamp(28px,2.9vw,43px);font-weight:500;line-height:1.13;letter-spacing:-1.4px;margin-bottom:12px}.intro{color:var(--muted);font-size:16px;line-height:1.5;margin-bottom:32px;max-width:650px}.section{border:0;padding:0;margin:0 0 29px;min-width:0}.section>legend,.field-label{font-weight:600;font-size:15px;display:block;margin-bottom:11px}.section-sub{font-size:12px;color:var(--muted);margin:-3px 0 13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.field{display:flex;flex-direction:column;gap:8px;font-size:13px;min-width:0}.field>span{font-weight:500}.field input,.field select,.field textarea{background:transparent;border:1px solid #55584b;border-radius:2px;color:var(--fg);padding:12px 13px;width:100%;min-height:46px}.field select{background:var(--bg);padding-right:6px}.field textarea{resize:vertical;line-height:1.5;min-height:90px}.field small,.hint{color:var(--muted);font-size:12px;line-height:1.5}.optional{font-weight:400;color:var(--muted)}.choices{display:flex;gap:10px;flex-wrap:wrap}.choice{display:flex;align-items:center;gap:10px;border:1px solid #55584b;border-radius:2px;padding:13px 14px;cursor:pointer;font-size:13px;flex:1 1 150px;transition:background .15s,border-color .15s}.choice:has(input:checked){border-color:var(--accent);background:#d8f53007}.choice:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:13px 20px}.check{display:flex;align-items:flex-start;gap:11px;font-size:14px;cursor:pointer}.check input{margin-top:2px}.check.solo{margin-top:15px;font-size:13px}.check small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.upload{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;border:1px dashed #777b69;padding:22px 15px;text-align:center;cursor:pointer;min-height:108px;border-radius:2px}.upload.dragover{border-color:var(--accent);background:#d8f53010}.upload .icon{width:25px;height:25px}.upload span{font-size:14px}.upload small{font-size:11px;color:var(--muted)}.file-list{list-style:none;margin:12px 0 0;padding:0}.file-list li{border-bottom:1px solid var(--line);padding:10px 0;display:flex;align-items:center;gap:10px;font-size:12px}.file-list .file-name{overflow-wrap:anywhere;flex:1}.file-list button{background:none;color:var(--muted);padding:5px;font-size:12px}.file-list a{text-decoration:underline}.actions{border-top:1px solid var(--line);display:flex;gap:16px;align-items:center;justify-content:space-between;padding-top:21px;margin-top:34px}.button{display:inline-flex;justify-content:center;align-items:center;gap:12px;padding:14px 22px;font-weight:600;font-size:14px;min-height:48px;border:1px solid #6f735f;background:transparent;border-radius:0;text-align:center}.button.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}.button.secondary{background:transparent;color:var(--fg)}.button.small{padding:9px 13px;min-height:38px;font-size:12px}.actions .left{display:flex;gap:18px;align-items:center}.aside{position:sticky;top:20px;padding:32px 0 30px 32px}.aside-label{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin:0 0 10px}.aside h2{font-size:27px;line-height:1.25;font-weight:500;letter-spacing:-.7px}.aside-city{margin-top:7px}.aside-block{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:23px}.aside-caption{color:var(--muted);font-size:12px;margin-bottom:10px}.aside-list{list-style:none;padding:0;margin:0;font-size:13px;display:grid;gap:10px}.aside-list li{display:flex;gap:9px;align-items:flex-start}.aside-list .dot{width:4px;height:4px;background:var(--accent);margin-top:8px;flex-shrink:0}.aside-help{display:flex;gap:11px;color:var(--muted);font-size:12px;line-height:1.6}.aside-metric{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid #2b2d26;font-size:12px}.aside-metric strong{font-size:21px;font-weight:500;color:var(--fg)}.footer{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:20px;padding:20px 0 28px}.footer p{max-width:620px}.notice{padding:13px 15px;border-left:2px solid var(--accent);background:var(--panel);font-size:12px;color:var(--muted);line-height:1.65;margin:17px 0}.notice strong{color:var(--fg);font-weight:500}.room{border-top:1px solid var(--line);padding:20px 0 8px;margin-top:15px}.room-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.room-head h3{font-size:17px;font-weight:500}.room-head button{background:none;color:var(--muted);font-size:12px;text-decoration:underline}.room .grid{margin-bottom:14px}.room .checks{margin:15px 0}.room .field-label{font-size:13px;margin:16px 0 9px}.style-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.style-option{border:1px solid #55584b;cursor:pointer;display:flex;gap:12px;align-items:center;padding:15px;font-size:13px}.style-option:has(input:checked){border-color:var(--accent)}.style-swatches{display:flex;gap:3px;flex-shrink:0}.style-swatches i{width:18px;height:33px;display:block;background:var(--swatch)}details{border-top:1px solid var(--line);padding:17px 0}details>summary{font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none}details>summary:after{content:"+";font-size:22px;color:var(--accent)}details[open]>summary:after{content:"−"}details[open]>summary{margin-bottom:20px}details .section{margin-bottom:20px}.count{font-size:12px;color:var(--muted);font-weight:400}.review-section{border-top:1px solid var(--line);padding:19px 0}.review-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.review-head h2{font-size:17px;font-weight:500}.review-head button{background:none;padding:0;color:var(--accent);font-size:12px}.review-section dl{display:grid;grid-template-columns:minmax(100px,36%) 1fr;gap:9px 15px;font-size:13px;margin:0}.review-section dt{color:var(--muted)}.review-section dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.review-section ul{font-size:13px;padding-left:17px;margin:8px 0}.review-section h3{font-size:14px;font-weight:600;margin:15px 0 7px}.review-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.full{grid-column:1/-1}.error{color:var(--danger);font-size:13px;margin:12px 0}.toast{position:fixed;z-index:100;left:50%;bottom:25px;transform:translateX(-50%);background:var(--accent);color:#111210;padding:13px 22px;box-shadow:0 4px 30px #0008;max-width:calc(100% - 30px);font-size:13px;text-align:center}.mobile-steps{display:none}.inline-group{display:flex;align-items:center;gap:12px}.spaced{margin-top:18px}.privacy-note{font-size:11px;color:var(--muted);line-height:1.65}.status{font-size:11px;color:var(--muted)}.busy{opacity:.6;pointer-events:none}dialog{max-width:600px;width:calc(100% - 36px);border:1px solid var(--line);padding:30px;background:var(--bg);color:var(--fg)}dialog::backdrop{background:#000b}dialog h2{font-size:23px;font-weight:500;margin-bottom:12px}dialog p{color:var(--muted);font-size:13px;margin-bottom:20px}dialog textarea{width:100%;height:220px;padding:14px;background:var(--panel);color:var(--fg);border:1px solid var(--line);font:12px/1.6 var(--font)}dialog .dialog-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}.print-only{display:none}
+@media(min-width:1550px){.main{padding-left:46px;padding-right:46px}.step-heading{font-size:44px}}@media(max-width:1200px){.shell{padding:0 25px}.layout{grid-template-columns:196px minmax(0,1fr) 225px}.steps{padding-right:19px}.steps h2{font-size:24px}.step-button{gap:13px;font-size:14px}.main{padding:27px}.aside{padding-left:23px}.aside h2{font-size:24px}.checks{gap:12px}.check{font-size:13px}.choice{flex-basis:140px}.grid.three{grid-template-columns:1fr 1fr}.grid.three>.field:last-child{grid-column:1/-1}.header nav{gap:20px}.demo-tools small{display:none}}@media(max-width:980px){.layout{grid-template-columns:190px minmax(0,1fr)}.aside{display:none}.main{border-right:0;padding-right:0}.header nav .optional-nav{display:none}.main{min-height:740px}.steps{top:12px}.step-heading{font-size:35px}}@media(max-width:680px){body{font-size:14px}.shell{padding:0 20px}.header{height:72px;gap:10px}.brand{font-size:28px}.header nav{gap:0}.header nav a:not(.active){display:none}.demo-tools{gap:12px}.demo-tools .text-button{font-size:11px}.progress{height:34px;gap:12px}.layout{display:block}.steps{display:none}.main{border:0;padding:16px 0 25px;min-height:auto}.step-heading{font-size:32px;letter-spacing:-1px}.intro{font-size:14px;margin-bottom:25px}.mobile-steps{display:block;margin:5px 0 15px}.mobile-steps select{width:100%;padding:10px;border:1px solid var(--line);background:var(--bg);color:var(--muted);font:13px var(--font)}.grid,.grid.three,.grid.four{grid-template-columns:1fr 1fr;gap:14px}.grid.three>.field:last-child{grid-column:1/-1}.checks{grid-template-columns:1fr;gap:14px}.choice{flex-basis:100%;padding:13px 14px}.section{margin-bottom:25px}.field input,.field select,.field textarea{font-size:16px}.field textarea{min-height:100px}.field-label,.section>legend{font-size:14px}.actions{align-items:stretch;flex-direction:column-reverse;gap:15px;margin-top:28px}.actions>.button{width:100%;font-size:14px}.actions .left{justify-content:space-between}.footer{flex-direction:column;gap:10px}.style-options{grid-template-columns:1fr}.review-section dl{grid-template-columns:1fr;gap:3px}.review-section dd{margin-bottom:8px}.review-actions{grid-template-columns:1fr}.room .grid.four{grid-template-columns:1fr 1fr}.room-head h3{font-size:16px}.room .grid>.field.full-mobile{grid-column:1/-1}.button{padding:13px 17px}.review-actions .button{width:100%}}
+@media(max-width:680px){.grid:not(.three):not(.four){grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}@media print{@page{size:A4;margin:17mm 16mm}html{color-scheme:light}body{background:white;color:#111;font:10pt/1.45 Arial}.shell{padding:0;max-width:none}.header,.progress,.steps,.aside,.mobile-steps,.footer,.actions,.intro,.step-heading,.review-head button,.review-actions,.notice,.privacy-note,.no-print,.toast,dialog{display:none!important}.layout{display:block}.main{border:0;padding:0;min-height:0}#step-content > :not(#review-content){display:none!important}.print-only{display:block}#review-content{display:block!important}.print-header{border-bottom:2px solid #111;padding-bottom:10pt;margin-bottom:18pt}.print-header h1{font-size:24pt;line-height:1.2}.print-header p{font-size:10pt;color:#555;margin-top:7pt}.review-section{break-inside:avoid;border-color:#ccc;padding:12pt 0}.review-head h2{font-size:13pt}.review-section dl{font-size:9.5pt;grid-template-columns:35% 1fr}.review-section dt{color:#555}.review-section ul{font-size:9.5pt}.review-section dd{white-space:pre-wrap}.print-note{font-size:9pt;color:#555;margin-top:20pt;border-top:1px solid #ccc;padding-top:12pt}}
+.style-options{gap:16px}.style-option{padding:0;display:block;position:relative;overflow:hidden}.style-photo{display:block;aspect-ratio:1.37;background-image:url(assets/brief-styles.jpg);background-size:200% 300%;background-position:var(--pos);background-repeat:no-repeat}.style-option .style-caption{display:flex;align-items:center;gap:10px;padding:13px;font-size:13px}.style-option .style-description{display:block;color:var(--muted);font-size:11px;padding:0 13px 13px}.style-option:has(input:checked){outline:1px solid var(--accent)}.choice span{overflow-wrap:anywhere}.steps li{padding-bottom:20px}.steps li:not(:last-child):after{height:11px}.steps h2{margin-bottom:25px}@media(max-width:600px){.style-options{gap:12px}.style-option .style-caption{padding:10px;align-items:flex-start;font-size:12px}.style-option .style-description{padding:0 10px 10px;font-size:10px}}
+.review-section p{overflow-wrap:anywhere}</style>
+<style>
+/* ===== Дизайн-шліфування під стиль vertexbuild.pro ===== */
+.step-heading{font-weight:800;letter-spacing:-.045em;font-size:clamp(32px,3.3vw,52px);line-height:1.04}
+.steps h2,.aside h2{font-weight:800;letter-spacing:-.04em}
+.section>legend,.field-label{font-weight:700}
+.review-head h2,.room-head h3{font-weight:700;letter-spacing:-.02em}
+.progress-fill{box-shadow:0 0 14px #d8f53099;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.step-number{transition:background .3s,border-color .3s,color .3s}
+.step-button.complete .step-number{font-size:0;background:#d8f53014}
+.step-button.complete .step-number::after{content:"✓";font-size:14px;font-weight:800;color:var(--accent)}
+.step-button:not([aria-current]):hover{color:var(--fg)}
+#step-content.enter{animation:step-in .5s cubic-bezier(.2,.7,.2,1)}
+.step-heading.enter,.intro.enter{animation:step-in .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes step-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.choice,.check,.upload,.style-option{transition:border-color .2s,background .2s,transform .2s}
+.choice:hover{border-color:#8b8f7a}.choice:has(input:checked){background:#d8f53012}
+.upload:hover{border-color:var(--accent);background:#d8f53008}
+.button.primary{transition:background .2s,transform .2s,box-shadow .2s}
+.button.primary:hover{background:#e6ff53;box-shadow:0 8px 30px -10px #d8f530aa}
+.button.primary:hover .icon{transform:translateX(4px)}.button .icon{transition:transform .2s}
+.style-photo{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.style-option:hover .style-photo{transform:scale(1.05)}
+.style-option:has(input:checked){outline:2px solid var(--accent);outline-offset:-2px}
+.style-option:has(input:checked)::after{content:"Обрано";position:absolute;top:12px;right:12px;background:var(--accent);color:var(--bg);font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 9px}
+details>summary{font-weight:600}
+.notice{border-left-width:3px}
+
+/* ===== 3D-модель, що будується разом із брифом ===== */
+.model-host:empty{display:none}
+.model-wrap{position:relative;border:1px solid var(--line);background:radial-gradient(120% 90% at 50% 100%,#22261a 0%,#141511 60%,#111210 100%);overflow:hidden}
+.model-wrap canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:pan-y}
+.model-wrap canvas:active{cursor:grabbing}
+.model-caption{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;pointer-events:none}
+.model-caption b{flex:none;background:var(--accent);color:var(--bg);font-size:11px;font-weight:800;padding:4px 8px;letter-spacing:.04em}
+.model-caption span{text-shadow:0 1px 8px #000}
+.model-caption.flash b{animation:flash .7s ease}
+@keyframes flash{0%{box-shadow:0 0 0 0 #d8f530cc}100%{box-shadow:0 0 0 14px #d8f53000}}
+.model-hint{position:absolute;top:10px;right:12px;font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;pointer-events:none}
+#aside-model{margin-bottom:24px}#aside-model .model-wrap{height:290px}
+#mobile-model{display:none}
+@media(max-width:980px){#mobile-model{display:block;margin:0 0 18px}#mobile-model .model-wrap{height:190px}}
+
+/* ===== Вітальний екран ===== */
+.welcome{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-columns:1.05fr 1fr;overflow:auto}
+.welcome-copy{padding:clamp(28px,6vw,90px);display:flex;flex-direction:column;justify-content:center;gap:26px}
+.welcome-copy .brand{font-size:30px}
+.welcome-copy h1{font-size:clamp(40px,5.4vw,86px);font-weight:800;letter-spacing:-.055em;line-height:.98}
+.welcome-copy h1 em{font-style:normal;color:var(--accent)}
+.welcome-copy p{color:#cfd0c8;font-size:18px;max-width:520px}
+.welcome-facts{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.welcome-facts li{border:1px solid var(--line);padding:9px 13px;font-size:13px;font-weight:600}
+.welcome-facts li b{color:var(--accent)}
+.welcome-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.welcome-actions .button{min-height:58px;padding:16px 28px;font-size:16px}
+.welcome #welcome-model{height:100%;min-height:420px}
+.welcome #welcome-model .model-wrap{height:100%;border:0;border-left:1px solid var(--line)}
+@media(max-width:860px){.welcome{grid-template-columns:1fr;grid-template-rows:auto 1fr}.welcome #welcome-model{order:-1;min-height:0;height:30svh}.welcome-copy h1{font-size:clamp(34px,10vw,48px)}.welcome-facts li{padding:7px 10px;font-size:12px}.welcome #welcome-model .model-wrap{border-left:0;border-bottom:1px solid var(--line)}.welcome-copy{justify-content:flex-start;padding:26px 20px 40px;gap:20px}.welcome-copy p{font-size:16px}.welcome-copy .brand{display:none}}
+
+/* ===== Живий план кімнати ===== */
+.room-plan{margin:2px 0 16px;border:1px solid var(--line);background:#141511;padding:14px;display:flex;align-items:center;gap:18px}
+.room-plan svg{flex:none;width:200px;height:130px;overflow:visible}
+.room-plan .plan-meta{font-size:12px;color:var(--muted);line-height:1.6}
+.room-plan .plan-meta b{display:block;color:var(--fg);font-size:22px;font-weight:800;letter-spacing:-.03em}
+.room-plan .plan-empty{font-size:12px;color:var(--muted)}
+.room-plan rect.room-shape{fill:#d8f53010;stroke:var(--accent);stroke-width:2;transition:all .35s cubic-bezier(.2,.7,.2,1)}
+@media(max-width:680px){.room-plan{flex-direction:column;align-items:flex-start}.room-plan svg{width:100%;height:150px}}
+
+/* ===== Надсилання ===== */
+.send-panel{margin:28px 0 10px;border:1px solid var(--accent);background:linear-gradient(135deg,#d8f53012,transparent 60%);padding:24px;display:grid;gap:16px}
+.send-panel .consent{font-size:13px}
+.send-button{min-height:62px;font-size:17px;font-weight:800;width:100%}
+.send-progress p{font-size:13px;color:var(--muted);margin-top:8px}
+.send-bar{height:4px;background:var(--line);overflow:hidden}.send-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.send-error{border-left:3px solid var(--danger);padding:10px 14px;font-size:13px;color:var(--muted)}.send-error b{display:block;color:var(--danger);margin-bottom:3px}
+.consent.invalid span{color:var(--danger)}
+
+/* ===== Екран «Бриф надіслано» ===== */
+.success{display:grid;gap:26px}
+.success-kicker{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.12em}
+.success h1{font-size:clamp(38px,4.4vw,68px);font-weight:800;letter-spacing:-.055em;line-height:1}
+.success>p{color:#cfd0c8;font-size:17px;max-width:620px}
+#success-model .model-wrap{height:320px}
+.success-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.success-steps div{border:1px solid var(--line);padding:18px}
+.success-steps b{display:block;font-size:30px;font-weight:800;letter-spacing:-.05em;color:var(--accent)}
+.success-steps p{font-size:14px;margin-top:6px}
+@media(max-width:680px){.success-steps{grid-template-columns:1fr}#success-model .model-wrap{height:230px}}
+@media(prefers-reduced-motion:reduce){#step-content.enter,.step-heading.enter,.intro.enter{animation:none}}
+@media print{.model-host,.welcome,.send-panel{display:none!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip" style="position:absolute;left:-9999px" onfocus="this.style.left='20px'" onblur="this.style.left='-9999px'">Перейти до брифу</a>
+<section class="welcome" id="welcome" aria-labelledby="welcome-title">
+  <div class="welcome-copy">
+    <a class="brand" href="https://vertexbuild.pro/">VERTEX<span>.</span></a>
+    <h1 id="welcome-title">Збудуймо ваш простір <em>ще до ремонту.</em></h1>
+    <p>Цей бриф — перший крок вашого проєкту. Поки ви відповідаєте, поруч збирається модель простору: від розмітки до світла у вікнах.</p>
+    <ul class="welcome-facts"><li><b>8</b> кроків</li><li>≈ <b>20</b> хвилин</li><li>Чернетка зберігається</li><li>Незнайоме можна пропустити</li></ul>
+    <div class="welcome-actions"><button class="button primary" type="button" id="welcome-start">Почати бриф <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><span class="status" id="welcome-draft"></span></div>
+  </div>
+  <div class="model-host" id="welcome-model"></div>
+</section>
+<div class="shell">
+<header class="header"><a class="brand" href="https://vertexbuild.pro/" aria-label="VERTEX — головна">VERTEX<span>.</span></a><nav aria-label="Головна навігація"><a class="optional-nav" href="https://vertexbuild.pro/#services">Послуги</a><a class="optional-nav" href="https://vertexbuild.pro/#portfolio">Портфоліо</a><a class="active" href="#brief" aria-current="page">Бриф</a></nav><div class="demo-tools"><a class="text-button" href="https://t.me/Vertexbuild" target="_blank" rel="noopener">Питання? Telegram</a><button class="text-button" id="example" hidden>Заповнити приклад</button></div></header>
+<div class="progress"><div class="progress-track" role="progressbar" aria-label="Прогрес брифу" aria-valuemin="1" aria-valuemax="8" aria-valuenow="1" id="progress"><div class="progress-fill" id="progress-fill" style="width:12.5%"></div></div><span class="progress-label" id="progress-label">Крок 1 з 8</span></div>
+<div class="layout" id="brief"><aside class="steps"><a class="back-link" href="https://vertexbuild.pro/">← На головну</a><h2>Ваш майбутній<br>простір</h2><ol id="steps"></ol></aside>
+<main class="main" id="main"><div class="model-host" id="mobile-model"></div><div class="mobile-steps"><label class="sr-only" for="mobile-step" hidden>Крок брифу</label><select id="mobile-step" aria-label="Обрати крок брифу"></select></div><h1 class="step-heading" id="step-title" tabindex="-1"></h1><p class="intro" id="step-intro"></p><div id="step-content"></div><div class="error" id="form-error" role="alert" hidden></div><div class="actions" id="actions"><div class="left"><button type="button" class="text-button" id="prev">Назад</button><button type="button" class="text-button" id="save">Зберегти чернетку</button></div><button class="button primary" type="button" id="next"></button></div></main>
+<aside class="aside" aria-label="Підсумок проєкту"><div class="model-host" id="aside-model"></div><div class="aside-block"><p class="aside-label">Ваш проєкт</p><h2 id="project-title">Квартира</h2><p class="aside-city" id="project-city">Місто ще не вказане</p></div><div class="aside-block"><p class="aside-caption">Очікуваний результат</p><ul class="aside-list" id="project-deliverables"></ul></div><div class="aside-block"><p class="aside-caption">Розповідаємо про простір</p><div class="aside-metric"><span>Приміщень у брифі</span><strong id="room-count">0</strong></div><div class="aside-metric"><span>Доданих файлів</span><strong id="file-count">0</strong></div><div class="aside-metric"><span>Потребує уточнення</span><strong id="unknown-count">0</strong></div></div><div class="aside-help"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg><p>Не знаєте відповідь?<br>Залиште поле порожнім — обговоримо з дизайнером.</p></div><div class="status spaced" id="save-status" aria-live="polite"></div></aside>
+</div>
+<footer class="footer"><p>Чернетка й файли зберігаються у вашому браузері, тож можна зробити паузу й повернутися. VERTEX отримає бриф лише після того, як ви натиснете «Надіслати».</p><button class="text-button" id="reset">Очистити мою чернетку</button></footer>
+</div>
+<div class="toast" role="status" id="toast" hidden></div>
+<dialog id="telegram-dialog" aria-labelledby="telegram-title"><h2 id="telegram-title">Передати бриф VERTEX</h2><p>Завантажте повний бриф із файлами та прикріпіть архів у чаті <strong>@Vertexbuild</strong>. Кнопка нижче відкриє чат із коротким описом; остаточне надсилання — у Telegram.</p><textarea id="telegram-text" readonly aria-label="Короткий опис для Telegram"></textarea><div class="dialog-actions"><button class="button small" id="close-dialog">Закрити</button><a class="button primary small" id="telegram-link" href="https://t.me/Vertexbuild" target="_blank" rel="noopener noreferrer">Відкрити Telegram ↗</a></div></dialog>
+<script>
+'use strict';
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const STEP_NAMES=['Контакти','Об’єкт','Люди й побут','Кімнати','Стиль','Комунікації','Матеріали','Підсумок'];
+const TITLES=['Спочатку познайомимося.','Розкажіть про ваш простір.','Простір під ваше життя.','Кожна кімната має значення.','Яким буде ваш інтер’єр?','Усе, що працює за стінами.','Від ідеї — до матеріалів.','Ваше завдання для VERTEX.'];
+const INTROS=['Залиште ім’я та зручний контакт для обговорення проєкту.','Квартира чи будинок? Визначимо площу та склад завдання.','Як ви живете сьогодні та що має змінитися після ремонту.','Додайте приміщення, відомі розміри та побажання.','Порівняйте реалістичні приклади та оберіть близькі вам напрями.','Вкажіть потреби. Точні точки, розміри й траси узгодимо після обмірів.','Матеріали та файли, які допоможуть почати.','Перегляньте відповіді. Збережіть бриф або підготуйте його для передачі.'];
+const DELIVERABLES=['3D-модель з розмірами','Фотореалістичні візуалізації','План електрики й освітлення','Вода та каналізація','Опалення й вентиляція','Розгортки й специфікації'];
+const ROOM_SYSTEMS=['Розетки й вимикачі','Сценарії освітлення','Вода й каналізація','Опалення / тепла підлога','Вентиляція / кондиціонер','Інтернет / слаботочні мережі'];
+const MODEL_DETAIL=['Геометрія об’єкта й розміри прорізів','Меблі та техніка з габаритами','Розетки, вимикачі й сантехнічні точки','Траси кабелів, труб і вентканалів','Висоти та прив’язки комунікацій'];
+const fresh=()=>({version:3,step:0,visited:[0],projectDetails:projectDefaults(),object:{type:'',floors:'1',scope:'Ремонт усього об’єкта',city:'',address:'',area:'',condition:'Не визначилися',height:'',budget:'',budgetScope:'Ремонт, меблі й техніка',deadline:'',deliverables:[...DELIVERABLES],needsMeasure:false,notes:''},people:{adults:'',children:'',pets:'',lifestyle:[],storage:'',accessibility:'',future:''},rooms:[],style:{styles:[],palette:'',likes:'',dislikes:'',links:'',existing:''},systems:{modelDetail:[...MODEL_DETAIL],electricState:'Не знаю',power:'',circuits:[],electricNotes:'',waterState:'Не знаю',waterNotes:'',heatType:'Не знаю',climate:[],heatNotes:'',smart:[],smartNotes:'',equipment:''},materials:{floor:[],walls:[],preferences:'',priority:[],sourcing:'Не визначилися',notes:''},contact:{name:'',phone:'',preferred:'Telegram',handle:'',time:'',comments:''}});
+let state=fresh(),files=[],db=null,saveTimer,toastTimer,savingFiles=false,restoring=false;
+try{const saved=JSON.parse(localStorage.getItem('vertex-brief-v3')||localStorage.getItem('vertex-brief-v2')||localStorage.getItem('vertex-brief-v1'));if(saved&&[1,2,3].includes(saved.version)&&saved.object&&Array.isArray(saved.rooms)){const base=fresh();state={...base,...saved,version:3};for(const k of ['object','people','style','systems','materials','contact'])state[k]={...base[k],...saved[k]};state.projectDetails={...base.projectDetails,...(saved.projectDetails||saved.pricing||{})};delete state.pricing;delete state.estimate;delete state.pricingReference;const mapStep=n=>saved.version===1?0:Math.max(0,Math.min(STEP_NAMES.length-1,saved.version===2&&Number(n)>=7?7:Number(n)||0));state.step=mapStep(saved.step);state.visited=saved.version===1?[0]:[...new Set((Array.isArray(saved.visited)?saved.visited:[0]).map(mapStep))];if(state.object.scope==='Ремонт усієї квартири')state.object.scope='Ремонт усього об’єкта';state.systems.modelDetail=state.systems.modelDetail.map(x=>x.replace('Геометрія квартири','Геометрія об’єкта'));}}catch{}
+state.systems.modelDetail ||= [...MODEL_DETAIL];
+function get(path){return path.split('.').reduce((a,k)=>a?.[k],state)}
+function set(path,value){const keys=path.split('.');let obj=state;for(let i=0;i<keys.length-1;i++)obj=obj[keys[i]];obj[keys.at(-1)]=value;queueSave();updateAside()}
+function field(label,path,{type='text',placeholder='',options,help='',min,max,maxlength=180,full=false}={}){const val=get(path)??'';const attrs=`data-path="${path}" ${placeholder?`placeholder="${esc(placeholder)}"`:''}`;let control;if(options)control=`<select ${attrs}>${options.map(x=>`<option ${val===x?'selected':''}>${esc(x)}</option>`).join('')}</select>`;else if(type==='textarea')control=`<textarea ${attrs} maxlength="${maxlength}" rows="3">${esc(val)}</textarea>`;else control=`<input ${attrs} type="${type}" value="${esc(val)}" ${min!==undefined?`min="${min}"`:''} ${max!==undefined?`max="${max}"`:''} ${type==='number'?'step="0.01" inputmode="decimal"':`maxlength="${maxlength}"`}>`;return `<label class="field ${full?'full-mobile':''}"><span>${label}</span>${control}${help?`<small>${help}</small>`:''}</label>`}
+function checks(path,options,{solo=false}={}){const val=get(path)||[];return `<div class="checks">${options.map(x=>`<label class="check"><input type="checkbox" data-array="${path}" value="${esc(x)}" ${val.includes(x)?'checked':''}><span>${esc(x)}</span></label>`).join('')}</div>`}
+function radios(path,options){return `<div class="choices">${options.map(x=>`<label class="choice"><input type="radio" name="${path}" data-path="${path}" value="${esc(x)}" ${get(path)===x?'checked':''}><span>${esc(x)}</span></label>`).join('')}</div>`}
+function section(title,content,sub=''){return `<fieldset class="section"><legend>${title}</legend>${sub?`<p class="section-sub">${sub}</p>`:''}${content}</fieldset>`}
+function upload(zone,title,help='PDF, JPG, PNG, WEBP, DWG, DXF · до 20 МБ на файл'){return `<label class="upload" data-drop="${zone}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 12 7-7a4 4 0 0 1 6 6L10 22a6 6 0 0 1-8-8L13 3a2 2 0 0 1 3 3L5 17"/></svg><span>${title}</span><small>${help}</small><input hidden type="file" data-upload="${zone}" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.dwg,.dxf"></label>${fileList(zone)}<p class="hint" style="margin-top:9px">Можна перетягнути файли в цю область.</p>`}
+function fileList(zone){const list=files.filter(f=>f.zone===zone);return list.length?`<ul class="file-list">${list.map(f=>`<li><span class="file-name">${esc(f.name)}</span><span class="optional">${(f.size/1024/1024).toFixed(1)} МБ</span><button type="button" data-remove-file="${f.id}" aria-label="Прибрати файл ${esc(f.name)}">Прибрати</button></li>`).join('')}</ul>`:''}
+function renderStep(){const i=state.step;$('#step-title').textContent=TITLES[i];$('#step-intro').textContent=INTROS[i];$('#steps').innerHTML=STEP_NAMES.map((x,n)=>`<li><button class="step-button ${state.visited.includes(n)&&n<i?'complete':''}" data-step="${n}" ${n===i?'aria-current="step"':''}><span class="step-number">${String(n+1).padStart(2,'0')}</span><span>${x}</span></button></li>`).join('');$('#mobile-step').innerHTML=STEP_NAMES.map((x,n)=>`<option value="${n}" ${n===i?'selected':''}>${String(n+1).padStart(2,'0')} · ${x}</option>`).join('');$('#progress-fill').style.width=`${(i+1)/STEP_NAMES.length*100}%`;$('#progress').setAttribute('aria-valuenow',i+1);$('#progress').setAttribute('aria-valuemax',STEP_NAMES.length);$('#progress-label').textContent=`Крок ${i+1} з ${STEP_NAMES.length}`;$('#prev').hidden=i===0;$('#next').hidden=i===7;$('#next').innerHTML=`Далі: ${esc(STEP_NAMES[i+1]?.toLocaleLowerCase('uk')||'')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>`;$('#actions').hidden=i===7;$('#form-error').hidden=true;
+if(i===0)$('#step-content').innerHTML=section('Як до вас звертатися?',field('Ваше ім’я *','contact.name',{placeholder:'Ім’я та прізвище',maxlength:80}))+section('Контакт для обговорення',`<div class="grid">${field('Телефон','contact.phone',{type:'tel',placeholder:'+380…',maxlength:30})}${field('Зручний спосіб зв’язку','contact.preferred',{options:['Telegram','Телефон','Viber','Email']})}${field('Telegram @нік або email','contact.handle',{placeholder:'@yourname або name@example.com',maxlength:160})}${field('Зручний час','contact.time',{placeholder:'Наприклад, будні після 18:00'})}</div>`,'Залиште щонайменше один контакт: телефон, Telegram або email. Для вибраного способу зв’язку потрібен відповідний контакт.')+section('Коментар',field('Що обговорити спочатку?','contact.comments',{type:'textarea',maxlength:1400,placeholder:'Коротко про ваш запит…'}))+`<p class="privacy-note">Відповіді зберігаються на вашому пристрої як чернетка. VERTEX отримає бриф лише після надсилання на останньому кроці.</p>`;
+
+if(i===1)$('#step-content').innerHTML=section('Тип житла *',radios('object.type',['Квартира','Будинок']))+section('Що плануєте?',radios('object.scope',['Ремонт усього об’єкта','Окремі кімнати','Лише візуалізація']))+section('',`<div class="grid three">${field('Місто','object.city',{placeholder:'Наприклад, Умань'})}${field('Загальна площа всіх рівнів, м²','object.area',{type:'number',min:1,max:2000,placeholder:'74'})}${field('Стан об’єкта','object.condition',{options:['Не визначилися','Новобудова','Вторинне житло','Житло з ремонтом']})}</div>`)+section('Поверховість',field('Кількість рівнів у проєкті','object.floors',{type:'number',min:1,max:4,help:'Кількість поверхів будинку або рівнів квартири. Загальна площа вище вже має включати всі рівні.'}))+section('Що потрібно отримати?',checks('object.deliverables',DELIVERABLES))+objectDetails()+section('План об’єкта',upload('plan','Додати план або обміри')+`<label class="check solo"><input type="checkbox" data-path="object.needsMeasure" ${state.object.needsMeasure?'checked':''}><span>Потрібен виїзний обмір об’єкта</span></label>`)+`<details><summary>Адреса, бюджет і строки <span class="count">за бажанням</span></summary><div class="grid">${field('Район / ЖК / місцевість','object.address',{placeholder:'Достатньо району або ЖК'})}${field('Бажаний термін готовності','object.deadline',{placeholder:'Наприклад, до початку ремонту в березні'})}${field('Ваш бюджет, грн','object.budget',{type:'number',min:0,max:100000000,placeholder:'Можна уточнити пізніше'})}${field('Що входить у цей бюджет','object.budgetScope',{options:['Ремонт, меблі й техніка','Тільки ремонтні роботи й матеріали','Тільки дизайн / візуалізація','Потрібна допомога з оцінкою']})}</div><div class="spaced">${field('Що важливо знати про об’єкт','object.notes',{type:'textarea',maxlength:2000,placeholder:'Наприклад, ремонт уже почався, є газ, потрібно зберегти кухню…'})}</div></details>`;
+if(i===2)$('#step-content').innerHTML=section('Хто житиме в оселі?',`<div class="grid three">${field('Дорослих','people.adults',{type:'number',min:0,max:20,placeholder:'2'})}${field('Дітей і їхній вік','people.children',{placeholder:'Наприклад, дитина 5 років'})}${field('Домашні тварини','people.pets',{placeholder:'Порода, кількість, особливості'})}</div>`)+section('Ваші звички та сценарії',checks('people.lifestyle',['Працюємо вдома','Часто готуємо','Приймаємо гостей','Потрібна тиха зона','Спорт / тренування вдома','Хобі або музика','Потрібна гостьова спальня','Плануємо поповнення сім’ї']))+section('Зберігання',field('Що й у якій кількості потрібно розмістити?','people.storage',{type:'textarea',maxlength:2500,placeholder:'Одяг, взуття, валізи, велосипед, спортивний інвентар, побутові речі…'}))+section('Комфорт і доступність',field('Особливі потреби','people.accessibility',{type:'textarea',maxlength:1800,placeholder:'Зручність для дітей, старших людей, низькі пороги, місце для крісла колісного…'}))+section('З поглядом наперед',field('Що може змінитися за кілька років?','people.future',{type:'textarea',maxlength:1200,placeholder:'Друга дитяча, окремий кабінет, догляд за рідними…'}));
+if(i===3)$('#step-content').innerHTML=section('Приміщення вашого об’єкта',`<p class="hint">Додайте тільки ті кімнати, які входять у проєкт. Невідомі розміри залиште порожніми.</p><div id="rooms">${state.rooms.map(roomMarkup).join('')||'<div class="notice">Почніть із кухні, спальні або ванної — потім додайте решту.</div>'}</div><button class="button secondary small spaced" data-action="add-room">+ Додати приміщення</button>`)+`<div class="notice"><strong>Для точної 3D-моделі потрібні обміри.</strong> Довжина, ширина й висота тут — вихідні дані. Розміри вікон, дверей, ніш, стояків і прив’язки комунікацій уточнюються на обмірі.</div>`;
+if(i===4)$('#step-content').innerHTML=section('Ближчі вам напрями',styleGallery(),'Можна обрати кілька. Це згенеровані приклади стилів, а не виконані роботи VERTEX.')+visualizationDetails()+section('Кольори та настрій',field('Що вам подобається?','style.palette',{type:'textarea',maxlength:1400,placeholder:'Світлий чи темний інтер’єр, теплі чи холодні відтінки, дерево, контрасти…'}))+section('Референси',upload('style','Додати фото інтер’єрів')+`<div class="spaced">${field('Посилання на Pinterest, добірку чи фото','style.links',{type:'textarea',maxlength:2500,placeholder:'Кожне посилання — з нового рядка. Опишіть, що саме подобається.'})}</div>`)+section('Подобається / не підходить',`<div class="grid">${field('Що хочеться повторити','style.likes',{type:'textarea',maxlength:1800,placeholder:'Наприклад, приховані двері, тепле дерево, багато світла…'})}${field('Чого точно не хочете','style.dislikes',{type:'textarea',maxlength:1800,placeholder:'Глянець, відкриті полиці, холодне світло…'})}</div>`)+section('Що потрібно зберегти',field('Меблі, техніка, предмети','style.existing',{type:'textarea',maxlength:1800,placeholder:'Вкажіть габарити, моделі та додайте їх у файли за потреби.'}));
+if(i===5)$('#step-content').innerHTML=`<div class="notice"><strong>Клієнту не потрібно знати технічні норми.</strong> Вкажіть сценарії й обладнання. Прив’язки, навантаження та траси перевіряються під час підготовки проєкту.</div>`+section('Що потрібно бачити у 3D?',checks('systems.modelDetail',MODEL_DETAIL),'Оберіть потрібну деталізацію моделі. Остаточний склад погодимо до початку робіт.')+systemsMarkup()+technicalDetails();
+if(i===6)$('#step-content').innerHTML=section('Покриття підлоги',checks('materials.floor',['Інженерна дошка / паркет','Вініл','Ламінат','Керамограніт / плитка','Мікроцемент','Потрібна рекомендація']))+section('Стіни',checks('materials.walls',['Фарбування','Декоративна штукатурка','Шпалери','Дерево / панелі','Плитка у вологих зонах','Потрібна рекомендація']))+section('Що важливіше у виборі?',checks('materials.priority',['Легко прибирати','Зносостійкість','Натуральні матеріали','Стійкість до тварин','Тактильність і фактури','Вкластися в бюджет']))+section('Обмеження й комплектація',`<div class="grid">${field('Хто підбирає та замовляє матеріали?','materials.sourcing',{options:['Не визначилися','Потрібна допомога VERTEX','Підбираємо самі','Вже є постачальники / майстри']})}${field('Улюблені бренди / обмеження','materials.preferences',{placeholder:'Бренди, алергії, матеріали, яких уникаєте'})}</div><div class="spaced">${field('Побажання до меблів і оздоблення','materials.notes',{type:'textarea',maxlength:2500,placeholder:'Індивідуальні меблі, готові рішення, категорія матеріалів, речі, які вже придбали…'})}</div>`)+section('Додаткові матеріали',upload('additional','Додати фото об’єкта, схеми чи специфікації'))+organizationDetails();
+if(i===7)$('#step-content').innerHTML=`<div id="review-content">${reviewMarkup()}</div><div class="send-panel" id="send-panel"><label class="check consent"><input type="checkbox" id="consent"><span>Погоджуюсь на обробку даних, щоб VERTEX опрацював бриф і зв’язався зі мною.</span></label><button class="button primary send-button" data-action="send">Надіслати бриф VERTEX <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><div class="send-progress" id="send-progress" hidden><div class="send-bar"><i id="send-bar"></i></div><p id="send-status">Надсилаємо відповіді…</p></div><div class="send-error" id="send-error" role="alert" hidden><b>Не вдалося надіслати</b><span>Відповіді й файли збережені. Спробуйте ще раз або передайте бриф вручну — завантажте архів і надішліть його в Telegram.</span></div><p class="privacy-note">Відповіді й файли (${files.length}) потраплять напряму до VERTEX. Копію можна зберегти собі нижче.</p></div><div class="review-actions"><button class="button secondary" data-action="zip">Завантажити копію з файлами</button><button class="button secondary" data-action="print">Друк / зберегти PDF</button><button class="button secondary" data-action="copy">Скопіювати текст</button><button class="button secondary" data-action="telegram">Передати в Telegram вручну ↗</button></div><div class="notice"><strong>Наступний крок — уточнення завдання з VERTEX.</strong> Обміри, остаточний склад робочих креслень, формат 3D-моделі, строки й вартість узгоджуються перед початком робіт.</div>`;
+updateAside();bindUploads();window.onStepRendered?.(i);}
+const EXTRA_SERVICES=['Повні інженерні розрахунки та робочі проєкти мереж','Конструктив / втручання в несучі конструкції','Фасад, покрівля або благоустрій ділянки','Виробничі креслення меблів','Детальний проєкт автоматизації / розумного дому','Авторський нагляд і виїзди під час ремонту','Комплектація, закупівлі та детальний кошторис ремонту'];
+const STYLE_EXAMPLES=[
+ ['Сучасний мінімалізм','0% 0%','Лаконічні форми, стримана палітра, приховане зберігання.'],
+ ['Теплий сучасний','100% 0%','Дерево, м’які фактури та теплі природні відтінки.'],
+ ['Скандинавський','0% 50%','Світлий простір, світле дерево та прості зручні меблі.'],
+ ['Класика / неокласика','100% 50%','Симетрія, молдинги та елегантні деталі.'],
+ ['Лофт / індустріальний','0% 100%','Цегла, бетон, метал і виразні відкриті фактури.'],
+ ['Свій мікс / ще не знаю','100% 100%','Приклад поєднання напрямів. Допоможемо знайти ваш стиль.']
+];
+function styleGallery(){return `<div class="style-options">${STYLE_EXAMPLES.map(([name,pos,description])=>`<label class="style-option"><span class="style-photo" style="--pos:${pos}" role="img" aria-label="Згенерований приклад: ${esc(name)}"></span><span class="style-caption"><input type="checkbox" aria-label="${esc(name)}" data-array="style.styles" value="${esc(name)}" ${state.style.styles.includes(name)?'checked':''}><span>${esc(name)}</span></span><span class="style-description">${description}</span></label>`).join('')}</div>`}
+function projectDefaults(){return {partialArea:'',ceiling:'До 3,2 м',redevelopment:'Без перепланування',wetZones:'1',visualDetail:'Стандартна',views:'До 4 ракурсів',variants:'2',revisions:'3',urgency:'Стандартний строк',visit:'Умань та область',modelFormat:'Потрібна консультація',extraServices:[]}}
+function objectDetails(){return `<details><summary>Додаткові параметри об’єкта <span class="count">за бажанням</span></summary><div class="grid">${state.object.scope==='Окремі кімнати'?field('Площа кімнат у проєкті, м²','projectDetails.partialArea',{type:'number',min:.1,max:2000,help:'Сумарна площа приміщень, які входять у проєкт.'}):''}${field('Висота / геометрія простору','projectDetails.ceiling',{options:['До 3,2 м','3,2–4 м','Понад 4 м / друге світло']})}${field('Перепланування','projectDetails.redevelopment',{options:['Без перепланування','Ненесучі перегородки','Зачіпаємо несучі конструкції']})}${field('Кухні, ванні та інші мокрі зони','projectDetails.wetZones',{type:'number',min:0,max:20})}${field('Де потрібен виїзд для обмірів?','projectDetails.visit',{options:['Умань та область','Інше місто'],help:'Місто та адресу вкажіть нижче.'})}</div></details>`}
+function visualizationDetails(){return `<details><summary>Побажання до візуалізації <span class="count">за бажанням</span></summary><div class="grid">${field('Деталізація та декор','projectDetails.visualDetail',{options:['Стандартна','Складна / багато індивідуальних деталей','Дуже детальна / авторські елементи']})}${field('Ракурсів на приміщення','projectDetails.views',{options:['До 4 ракурсів','5–8 ракурсів','9–12 ракурсів']})}</div><p class="hint spaced">Це початкові побажання. Остаточний склад візуалізацій погодимо разом.</p></details>`}
+function technicalDetails(){return `<details><summary>Формат моделі та додаткові завдання <span class="count">для фахівців · можна пропустити</span></summary>${field('Формат моделі / файлів','projectDetails.modelFormat',{options:['Потрібна консультація','3D-модель + PDF-креслення','Редагована BIM-модель / IFC / RVT','SketchUp / інший узгоджений формат']})}<div class="spaced">${checks('projectDetails.extraServices',EXTRA_SERVICES)}</div><p class="hint spaced">Склад інженерних розділів, інформаційне наповнення моделі та додаткові роботи погоджуються перед початком проєкту.</p></details>`}
+function organizationDetails(){return `<details><summary>Організація роботи <span class="count">за бажанням</span></summary><div class="grid">${field('Бажана кількість варіантів планування','projectDetails.variants',{type:'number',min:1,max:5})}${field('Бажана кількість раундів правок','projectDetails.revisions',{type:'number',min:0,max:10})}${field('Темп роботи','projectDetails.urgency',{options:['Стандартний строк','Прискорений строк']})}</div><p class="hint spaced">Кількість варіантів, правки та можливість виконання у бажаний строк узгоджуються з VERTEX.</p></details>`}
+
+function roomMarkup(r,n){const path=`rooms.${n}`;return `<section class="room" data-room="${r.id}"><div class="room-head"><h3>${String(n+1).padStart(2,'0')} · ${esc(r.name||'Нове приміщення')}</h3><button type="button" data-remove-room="${r.id}">Прибрати</button></div><div class="grid">${field('Назва приміщення',`${path}.name`,{placeholder:'Наприклад, кухня-вітальня'})}${field('Тип',`${path}.type`,{options:['Кухня-вітальня','Кухня','Вітальня','Спальня','Дитяча','Ванна / санвузол','Кабінет','Передпокій','Гардеробна','Балкон / лоджія','Інше']})}</div><div class="grid four">${field('Довжина, м',`${path}.length`,{type:'number',min:.1,max:100,placeholder:'5.20'})}${field('Ширина, м',`${path}.width`,{type:'number',min:.1,max:100,placeholder:'3.80'})}${field('Висота, м',`${path}.height`,{type:'number',min:1,max:15,placeholder:'2.70'})}${field('Площа, м²',`${path}.area`,{type:'number',min:.1,max:1000,placeholder:'За планом'})}</div><div class="room-plan" data-plan="${n}" aria-hidden="true"></div>${field('Меблі, техніка та сценарії',`${path}.needs`,{type:'textarea',maxlength:2000,placeholder:'Що має бути в цій кімнаті? Для кого вона, як використовується?'})}<p class="field-label">Комунікації в цьому приміщенні</p>${checks(`${path}.systems`,ROOM_SYSTEMS)}${field('Що врахувати у 3D-моделі та на кресленнях',`${path}.notes`,{type:'textarea',maxlength:1800,placeholder:'Вікна, двері, ніші, висоти, прив’язки точок, меблі з габаритами, відкривання…'})}</section>`}
+function systemsMarkup(){return `<details open><summary>Електрика й освітлення</summary><div class="grid">${field('Стан електрики','systems.electricState',{options:['Не знаю','Потрібно все з нуля','Частково є розведення','Зберігаємо наявне']})}${field('Виділена потужність, кВт','systems.power',{type:'number',min:0,max:200,placeholder:'Якщо відома'})}</div><div class="spaced">${checks('systems.circuits',['Багато робочих розеток','Окремі лінії для техніки','Майстер-вимикач','Димування','Нічне / навігаційне світло','Резервне живлення','Підсвітка меблів','Прохідні вимикачі'])}</div><div class="spaced">${field('Сценарії та важливі точки','systems.electricNotes',{type:'textarea',maxlength:2500,placeholder:'Де заряджаєте пристрої, працюєте, готуєте? Які окремі джерела світла потрібні?'})}</div></details><details><summary>Вода й каналізація</summary>${field('Наявні підключення','systems.waterState',{options:['Не знаю','Потрібно нове розведення','Є стояки й виводи','Потрібне часткове перенесення','Зберігаємо наявне']})}<div class="spaced">${field('Прилади та побажання','systems.waterNotes',{type:'textarea',maxlength:2500,placeholder:'Ванна чи душ, бойлер, пральна та сушильна машини, фільтри, посудомийка, захист від протікання. Де вони мають бути?'})}</div></details><details><summary>Опалення, вентиляція й кондиціювання</summary>${field('Джерело опалення','systems.heatType',{options:['Не знаю','Централізоване','Індивідуальний газовий котел','Електрокотел','Тепловий насос','Інше']})}<div class="spaced">${checks('systems.climate',['Тепла підлога','Радіатори','Кондиціонери','Припливна вентиляція','Рекуперація','Витяжки у вологих зонах'])}</div><div class="spaced">${field('Де потрібні ці системи?','systems.heatNotes',{type:'textarea',maxlength:2500,placeholder:'У яких кімнатах, чи відомі місця зовнішніх блоків, висоти стелі, наявні шахти й радіатори?'})}</div></details><details><summary>Інтернет, безпека й розумний дім</summary>${checks('systems.smart',['Провідний інтернет','Wi-Fi по всій квартирі','Телебачення / медіазона','Домофон','Охоронна система','Камери','Автоматизація світла / штор','Датчики диму / протікання'])}<div class="spaced">${field('Що важливо передбачити?','systems.smartNotes',{type:'textarea',maxlength:1800,placeholder:'Де роутер, робочі місця, серверне обладнання, ТВ, датчики, сценарії керування…'})}</div></details><details><summary>Техніка й наявні обмеження</summary>${field('Перелік моделей і габаритів','systems.equipment',{type:'textarea',maxlength:3500,placeholder:'Духовка, індукція, холодильник, витяжка, пральна машина, котел, бойлер. Напишіть моделі, розміри або додайте специфікації на наступному кроці.'})}<p class="hint spaced">Фото стояків, щитка, вентиляційних шахт і наявних трас допоможуть розібратися з вихідними даними.</p></details>`}
+function reviewMarkup(){const o=state.object,p=state.people,s=state.style,sys=state.systems,m=state.materials,c=state.contact,d=state.projectDetails;const row=(a,b)=>`<dt>${a}</dt><dd>${esc(Array.isArray(b)?b.join(' · '):b||'Уточнити з дизайнером')}</dd>`;const head=(name,i)=>`<div class="review-head"><h2>${name}</h2><button data-step="${i}">Редагувати</button></div>`;return `<div class="print-only print-header"><h1>VERTEX. Бриф клієнта</h1><p>${esc(o.type||'Житло')} · 3D-візуалізація · комунікації · ${new Date().toLocaleDateString('uk-UA')}</p></div><section class="review-section">${head('01 · Контакти',0)}<dl>${row('Ім’я',c.name)}${row('Телефон',c.phone)}${row('Як зв’язатися',[c.preferred,c.handle].filter(Boolean).join(' · '))}${row('Коментар',c.comments)}${row('Зручний час',c.time)}</dl></section><section class="review-section">${head('02 · Об’єкт і склад проєкту',1)}<dl>${row('Тип житла',o.type)}${row('Рівнів у проєкті',o.floors)}${row('Обсяг',o.scope)}${row('Місто',o.city)}${row('Район / адреса',o.address)}${row('Площа',o.area?`${o.area} м²`:'')}${row('Стан',o.condition)}${row('Висота / геометрія',d.ceiling)}${row('Перепланування',d.redevelopment)}${row('Мокрі зони',d.wetZones)}${o.scope==='Окремі кімнати'?row('Площа кімнат у проєкті',d.partialArea?d.partialArea+' м²':''):''}${o.needsMeasure?row('Виїзд для обмірів',d.visit):''}${row('Потрібні результати',o.deliverables)}${row('Обмір',o.needsMeasure?'Потрібен обмір':'Уточнити наявність і точність обмірів')}${row('Орієнтир бюджету',o.budget?`${Number(o.budget).toLocaleString('uk-UA')} грн · ${o.budgetScope}`:'Не визначено')}${row('Строк',o.deadline)}${row('Додатково',o.notes)}</dl></section><section class="review-section">${head('03 · Люди й побут',2)}<dl>${row('Дорослі',p.adults)}${row('Діти',p.children)}${row('Тварини',p.pets)}${row('Сценарії',p.lifestyle)}${row('Зберігання',p.storage)}${row('Доступність',p.accessibility)}${row('На перспективу',p.future)}</dl></section><section class="review-section">${head('04 · Приміщення й розміри',3)}${state.rooms.length?state.rooms.map(r=>`<h3>${esc(r.name||r.type)}</h3><dl>${row('Тип',r.type)}${row('Розміри, Д × Ш × В',r.length&&r.width&&r.height?`${r.length} × ${r.width} × ${r.height} м`:[r.length?`довжина ${r.length} м`:null,r.width?`ширина ${r.width} м`:null,r.height?`висота ${r.height} м`:null].filter(Boolean).join('; '))}${row('Площа',r.area?`${r.area} м²`:r.length&&r.width?`${(+r.length*+r.width).toFixed(2)} м², розрахунок для прямокутного приміщення`:'')}${row('Наповнення',r.needs)}${row('Комунікації',r.systems)}${row('Деталі для моделі',r.notes)}</dl>`).join(''):'<p class="hint">Приміщення ще не додано.</p>'}</section><section class="review-section">${head('05 · Стиль і побажання',4)}<dl>${row('Напрями',s.styles)}${row('Деталізація візуалізації',d.visualDetail)}${row('Ракурсів на приміщення',d.views)}${row('Палітра',s.palette)}${row('Подобається',s.likes)}${row('Не підходить',s.dislikes)}${row('Референси',s.links)}${row('Зберігаємо',s.existing)}</dl></section><section class="review-section">${head('06 · Комунікації й техніка',5)}<dl>${row('Деталізація 3D',sys.modelDetail)}${row('Формат файлів',d.modelFormat)}${row('Додаткові завдання',d.extraServices)}${row('Електрика',sys.electricState)}${row('Потужність',sys.power?`${sys.power} кВт`:'')}${row('Електрика / освітлення',sys.circuits)}${row('Сценарії й точки',sys.electricNotes)}${row('Вода / каналізація',sys.waterState)}${row('Прилади й перенесення',sys.waterNotes)}${row('Опалення',sys.heatType)}${row('Кліматичні системи',sys.climate)}${row('Деталі клімату',sys.heatNotes)}${row('Слаботочні мережі',sys.smart)}${row('Деталі автоматизації',sys.smartNotes)}${row('Техніка та габарити',sys.equipment)}</dl></section><section class="review-section">${head('07 · Матеріали',6)}<dl>${row('Підлога',m.floor)}${row('Стіни',m.walls)}${row('Пріоритети',m.priority)}${row('Комплектація',m.sourcing)}${row('Обмеження',m.preferences)}${row('Побажання',m.notes)}${row('Варіантів планування',d.variants)}${row('Раундів правок',d.revisions)}${row('Темп роботи',d.urgency)}</dl></section><section class="review-section"><div class="review-head"><h2>Додані файли <span class="count">${files.length}</span></h2></div>${files.length?`<ul>${files.map(f=>`<li>${esc(f.name)} · ${(f.size/1024/1024).toFixed(1)} МБ</li>`).join('')}</ul>`:'<p class="hint">Файлів поки немає.</p>'}</section><section class="review-section"><div class="review-head"><h2>Що ще уточнити перед початком</h2></div><ul>${missingItems().map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><p class="print-only print-note">Попередній бриф. Точність обмірів, прив’язки мереж, технічні рішення, склад креслень, строки й вартість уточнюються з VERTEX перед початком робіт. Контакт студії: Telegram @Vertexbuild · vertexbuild.pro. Вкладення передаються окремо або в ZIP разом із брифом.</p>`}
+function missingItems(){const x=[];if(!state.object.city)x.push('Місто та доступ до об’єкта');if(!state.object.area)x.push('Загальна площа об’єкта');if(state.object.needsMeasure||!files.some(f=>f.zone==='plan'))x.push('Обмірний план: габарити, висоти, отвори, ніші, стояки й шахти');if(!state.rooms.length)x.push('Склад і призначення приміщень');if(state.rooms.some(r=>!r.length||!r.width||!r.height))x.push('Точні розміри приміщень');if(!state.systems.equipment)x.push('Моделі й габарити техніки та інженерного обладнання');if(state.systems.electricState==='Не знаю'||!state.systems.power)x.push('Стан електрики й виділена потужність');if(!state.contact.phone&&!state.contact.handle)x.push('Контакт для уточнень');x.push('Формат 3D-моделі, перелік робочих планів і рівень деталізації комунікацій');return x}
+function updateAside(){$('#project-title').textContent=`${state.object.type||'Ваш об’єкт'}${state.object.area?' · '+state.object.area+' м²':''}`;$('#project-city').textContent=state.object.city||'Місто ще не вказане';$('#project-deliverables').innerHTML=state.object.deliverables.length?state.object.deliverables.map(x=>`<li><span class="dot"></span><span>${esc(x)}</span></li>`).join(''):'<li class="optional">Оберіть потрібні результати</li>';$('#room-count').textContent=state.rooms.length;$('#file-count').textContent=files.length;$('#unknown-count').textContent=missingItems().length;window.onStateChange?.()}
+function save(){try{localStorage.setItem('vertex-brief-v3',JSON.stringify(state));$('#save-status').textContent='Чернетку збережено на цьому пристрої';return true}catch{$('#save-status').textContent='Автозбереження недоступне. Завантажте бриф.';return false}}
+function queueSave(){clearTimeout(saveTimer);saveTimer=setTimeout(save,400)}
+function toast(text){clearTimeout(toastTimer);$('#toast').textContent=text;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,3800)}
+function navigate(i){state.step=Math.max(0,Math.min(STEP_NAMES.length-1,Number(i)||0));if(!state.visited.includes(state.step))state.visited.push(state.step);save();renderStep();window.scrollTo({top:0,behavior:'instant'});$('#step-title').focus({preventScroll:true})}
+function contactError(){const c=state.contact,phone=c.phone.replace(/\D/g,''),handle=c.handle.trim();if(!c.name.trim())return ['contact.name','Вкажіть, як до вас звертатися.'];if(c.phone&&!(phone.length>=9&&phone.length<=15))return ['contact.phone','Перевірте телефон: від 9 до 15 цифр.'];if(handle&&!/^@[a-zA-Z][a-zA-Z0-9_]{4,31}$/.test(handle)&&!/^\S+@\S+\.\S+$/.test(handle))return ['contact.handle','Вкажіть Telegram у форматі @username або коректний email.'];if(!phone&&!handle)return ['contact.phone','Залиште телефон, Telegram або email для зв’язку.'];if(['Телефон','Viber'].includes(c.preferred)&&!phone)return ['contact.phone','Для цього способу зв’язку потрібен телефон.'];if(c.preferred==='Telegram'&&!/^@/.test(handle)&&!phone)return ['contact.handle','Для Telegram залиште @нік або телефон.'];if(c.preferred==='Email'&&!/^\S+@\S+\.\S+$/.test(handle))return ['contact.handle','Для Email потрібна електронна адреса.'];return null}
+function formError(path,message){$('#form-error').textContent=message;$('#form-error').hidden=false;document.querySelector('[data-path="'+path+'"]')?.focus();return false}
+function validateCurrent(){const bad=[...$('#step-content').querySelectorAll('input[type=number]')].find(x=>x.value&&!x.checkValidity());if(bad){bad.reportValidity();return false}const err=contactError();if(err){if(state.step!==0){navigate(0)}return formError(...err)}if(state.step===1&&!state.object.type)return formError('object.type','Оберіть тип житла: квартира чи будинок.');return true}
+document.addEventListener('input',e=>{const t=e.target;if(t.matches('[data-path]')&&t.type!=='radio')set(t.dataset.path,t.type==='checkbox'?t.checked:t.value)});
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset.array){const arr=get(t.dataset.array);if(t.checked&&!arr.includes(t.value))arr.push(t.value);else if(!t.checked)arr.splice(arr.indexOf(t.value),1);if(t.dataset.array==='object.deliverables'&&state.object.scope==='Лише візуалізація'&&state.object.deliverables.some(x=>DELIVERABLES.slice(2).includes(x)))state.object.scope='Ремонт усього об’єкта';queueSave();updateAside()}else if(t.matches('select[data-path],input[type=radio][data-path]')){const old=get(t.dataset.path);set(t.dataset.path,t.value);if(t.dataset.path==='object.scope'){if(t.value==='Лише візуалізація')state.object.deliverables=DELIVERABLES.slice(0,2);else if(old==='Лише візуалізація')state.object.deliverables=[...DELIVERABLES];queueSave();renderStep();}else if(t.dataset.path==='object.type')renderStep();}if(t.dataset.upload)addFiles(t.dataset.upload,[...t.files]);if(t.id==='mobile-step'){if(Number(t.value)<state.step||validateCurrent())navigate(t.value);else t.value=state.step}});
+document.addEventListener('click',async e=>{const t=e.target.closest('button,[data-action]');if(!t)return;if(t.dataset.step!==undefined){if(Number(t.dataset.step)<state.step||validateCurrent())navigate(t.dataset.step);return}if(t.dataset.removeRoom){state.rooms=state.rooms.filter(x=>x.id!==t.dataset.removeRoom);save();renderStep();return}if(t.dataset.removeFile){await removeFile(t.dataset.removeFile);return}if(t.dataset.action==='add-room'){state.rooms.push({id:crypto.randomUUID(),name:'',type:'Кухня-вітальня',length:'',width:'',height:'',area:'',needs:'',systems:[],notes:''});save();renderStep();const last=$('#rooms .room:last-child input');last?.focus();return}if(t.dataset.action==='print'){window.print();return}if(t.dataset.action==='copy'){const text=briefText();try{await navigator.clipboard.writeText(text);toast('Текст брифу скопійовано')}catch{download('VERTEX_brief.txt',new Blob([text],{type:'text/plain;charset=utf-8'}));toast('Завантажено текстовий бриф')}return}if(t.dataset.action==='zip'){await exportZip(t);return}if(t.dataset.action==='telegram'){const text=telegramSummary();$('#telegram-text').value=text;$('#telegram-link').href='https://t.me/Vertexbuild?text='+encodeURIComponent(text);$('#telegram-dialog').showModal();return}});
+$('#next').onclick=()=>{if(validateCurrent())navigate(state.step+1)};$('#prev').onclick=()=>navigate(state.step-1);$('#save').onclick=()=>{toast(save()?'Чернетку збережено. Можна продовжити пізніше.':'Не вдалося зберегти. Завантажте бриф на кроці «Підсумок».')};$('#close-dialog').onclick=()=>$('#telegram-dialog').close();
+$('#reset').onclick=async()=>{if(!confirm('Очистити всі відповіді та додані файли цього брифу?'))return;state=fresh();files=[];if(db)await dbOperation('readwrite',s=>s.clear());save();renderStep();toast('Чернетку очищено')};
+$('#example').onclick=async()=>{if((state.object.city||state.rooms.length||files.length)&&!confirm('Замінити поточні відповіді демонстраційним прикладом? Ваші додані файли залишаться.'))return;state=fresh();Object.assign(state.object,{city:'Умань',area:'74',condition:'Новобудова',budget:'1800000',needsMeasure:true,deadline:'До початку ремонтних робіт',notes:'Приклад: потрібна повна 3D-модель із розмірами, візуалізації та погоджені схеми комунікацій.'});Object.assign(state.people,{adults:'2',children:'Дитина 5 років',pets:'Собака',lifestyle:['Працюємо вдома','Часто готуємо'],storage:'Закрите зберігання, місце для пилососа, валіз і сезонного одягу.'});state.rooms=[{id:crypto.randomUUID(),name:'Кухня-вітальня',type:'Кухня-вітальня',length:'6',width:'4',height:'2.7',area:'24',needs:'Кухня до стелі, стіл на 4–6 людей, диван, робоче місце біля вікна.',systems:['Розетки й вимикачі','Сценарії освітлення','Вода й каналізація','Вентиляція / кондиціонер','Інтернет / слаботочні мережі'],notes:'Потрібні габарити меблів, прив’язки розеток, води й витяжки.'},{id:crypto.randomUUID(),name:'Спальня',type:'Спальня',length:'4',width:'3.5',height:'2.7',area:'14',needs:'Ліжко 180 × 200, закрита шафа, щільні штори.',systems:['Розетки й вимикачі','Сценарії освітлення','Вентиляція / кондиціонер'],notes:''},{id:crypto.randomUUID(),name:'Ванна',type:'Ванна / санвузол',length:'2.5',width:'2',height:'2.7',area:'5',needs:'Душ, підвісний унітаз, пральна й сушильна машини в колоні.',systems:['Вода й каналізація','Опалення / тепла підлога','Вентиляція / кондиціонер'],notes:'Перевірити місця стояків і висоту каналізаційних виводів.'}];state.style.styles=['Теплий сучасний'];state.style.palette='Теплі нейтральні відтінки, дерево, матові поверхні.';state.style.dislikes='Глянець і холодне світло.';Object.assign(state.systems,{electricState:'Потрібно все з нуля',power:'10',circuits:['Окремі лінії для техніки','Майстер-вимикач','Нічне / навігаційне світло'],waterState:'Є стояки й виводи',heatType:'Індивідуальний газовий котел',climate:['Тепла підлога','Кондиціонери','Витяжки у вологих зонах'],smart:['Провідний інтернет','Wi-Fi по всій квартирі','Датчики диму / протікання'],equipment:'Моделі техніки ще не обрані. Потрібно погодити до розроблення остаточних прив’язок.'});state.materials.floor=['Інженерна дошка / паркет','Керамограніт / плитка'];state.materials.walls=['Фарбування'];state.materials.priority=['Легко прибирати','Зносостійкість','Стійкість до тварин'];state.projectDetails.wetZones='2';state.contact.name='Демонстраційний клієнт';state.contact.preferred='Email';state.contact.handle='client@example.com';state.object.type='Квартира';save();renderStep();toast('Заповнено демонстраційний приклад. Дані можна змінювати.')};
+function bindUploads(){document.querySelectorAll('[data-drop]').forEach(el=>{el.ondragover=e=>{e.preventDefault();el.classList.add('dragover')};el.ondragleave=()=>el.classList.remove('dragover');el.ondrop=e=>{e.preventDefault();el.classList.remove('dragover');addFiles(el.dataset.drop,[...e.dataTransfer.files])}})}
+function dbOperation(mode,operation){return new Promise((resolve,reject)=>{if(!db){resolve();return}const tx=db.transaction('files',mode);operation(tx.objectStore('files'));tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error)})}
+function openDB(){return new Promise((resolve,reject)=>{if(!window.indexedDB){reject(new Error('no indexedDB'));return}const req=indexedDB.open('vertex-brief-files',1);req.onupgradeneeded=()=>req.result.createObjectStore('files',{keyPath:'id'});req.onsuccess=()=>{db=req.result;const tx=db.transaction('files','readonly');const q=tx.objectStore('files').getAll();q.onsuccess=()=>{files=q.result;resolve()};q.onerror=reject};req.onerror=reject})}
+async function addFiles(zone,incoming){if(savingFiles){toast('Дочекайтеся додавання поточних файлів');return}savingFiles=true;let added=0;const errors=[];try{for(const f of incoming){if(!/\.(pdf|jpe?g|png|webp|dwg|dxf)$/i.test(f.name)){errors.push('Непідтримуваний формат: '+f.name);continue}if(f.size>20*1024*1024){errors.push('Понад 20 МБ: '+f.name);continue}if(files.length>=30){errors.push('До одного брифу можна додати 30 файлів');break}if(files.some(x=>x.name===f.name&&x.size===f.size&&x.zone===zone))continue;const row={id:crypto.randomUUID(),zone,name:f.name,size:f.size,type:f.type,blob:f};files.push(row);added++;if(db){try{await dbOperation('readwrite',s=>s.put(row))}catch{toast('Файл доступний у цій сесії. Завантажте архів перед закриттям.')}}}renderStep();if(errors.length)toast(errors[0]);else if(added)toast(`Додано файлів: ${added}`)}finally{savingFiles=false}}
+async function removeFile(id){files=files.filter(x=>x.id!==id);if(db)await dbOperation('readwrite',s=>s.delete(id));renderStep()}
+function briefText(){const wrap=document.createElement('div');wrap.innerHTML=reviewMarkup();wrap.querySelectorAll('button,.print-header,.print-note').forEach(n=>n.remove());let lines=['VERTEX — БРИФ КЛІЄНТА',new Date().toLocaleDateString('uk-UA'),''];for(const sec of wrap.querySelectorAll('.review-section')){lines.push(sec.querySelector('h2')?.textContent.trim()||'');for(const el of sec.children){if(el.tagName==='DL'){for(let i=0;i<el.children.length;i+=2)lines.push(el.children[i].textContent+': '+el.children[i+1].textContent)}else if(el.tagName==='H3')lines.push('\n'+el.textContent);else if(el.tagName==='UL')for(const li of el.querySelectorAll('li'))lines.push('• '+li.textContent);else if(el.tagName==='P')lines.push(el.textContent)}lines.push('')}return lines.join('\n')}
+function telegramSummary(){const o=state.object;return [`Вітаю, VERTEX! Підготували бриф: ${o.type||'житло'}.`,'',`Місто: ${o.city||'уточнимо'}`,`Площа: ${o.area?o.area+' м²':'уточнимо'}`,`Обсяг: ${o.scope}`,`Потрібно: ${o.deliverables.join(', ')||'обговоримо'}`,`Приміщень у брифі: ${state.rooms.length}`,`Контакт: ${state.contact.name||''} ${state.contact.phone||state.contact.handle||'уточнимо'}`,`Вкладень: ${files.length}`,'','Повний бриф і файли прикріплю окремим ZIP-архівом.'].join('\n').slice(0,3500)}
+function download(name,blob){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
+const crcTable=Uint32Array.from({length:256},(_,n)=>{for(let k=0;k<8;k++)n=n&1?0xedb88320^(n>>>1):n>>>1;return n>>>0});
+function crc32(bytes){let c=0xffffffff;for(const b of bytes)c=crcTable[(c^b)&255]^(c>>>8);return(c^0xffffffff)>>>0}
+function zipBlob(items){const encoder=new TextEncoder(),local=[],central=[];let offset=0,centralSize=0;const now=new Date(),time=(now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>1),date=((now.getFullYear()-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate();for(const item of items){const name=encoder.encode(item.name),data=item.data,crc=crc32(data);const h=new Uint8Array(30+name.length),v=new DataView(h.buffer);v.setUint32(0,0x04034b50,true);v.setUint16(4,20,true);v.setUint16(6,0x800,true);v.setUint16(10,time,true);v.setUint16(12,date,true);v.setUint32(14,crc,true);v.setUint32(18,data.length,true);v.setUint32(22,data.length,true);v.setUint16(26,name.length,true);h.set(name,30);local.push(h,data);const ch=new Uint8Array(46+name.length),cv=new DataView(ch.buffer);cv.setUint32(0,0x02014b50,true);cv.setUint16(4,20,true);cv.setUint16(6,20,true);cv.setUint16(8,0x800,true);cv.setUint16(12,time,true);cv.setUint16(14,date,true);cv.setUint32(16,crc,true);cv.setUint32(20,data.length,true);cv.setUint32(24,data.length,true);cv.setUint16(28,name.length,true);cv.setUint32(42,offset,true);ch.set(name,46);central.push(ch);centralSize+=ch.length;offset+=h.length+data.length}const end=new Uint8Array(22),ev=new DataView(end.buffer);ev.setUint32(0,0x06054b50,true);ev.setUint16(8,items.length,true);ev.setUint16(10,items.length,true);ev.setUint32(12,centralSize,true);ev.setUint32(16,offset,true);return new Blob([...local,...central,end],{type:'application/zip'})}
+async function exportZip(button){if(savingFiles){toast('Дочекайтеся завершення додавання файлів');return}button.disabled=true;const text=button.textContent;button.textContent='Готуємо архів…';try{const encoder=new TextEncoder(),items=[{name:'VERTEX_brief.txt',data:encoder.encode(briefText())},{name:'VERTEX_brief.json',data:encoder.encode(JSON.stringify({schema:'vertex-client-brief-v3',exportedAt:new Date().toISOString(),...state,files:files.map(({id,zone,name,size,type})=>({id,zone,name,size,type})),questionsToClarify:missingItems()},null,2))}];for(let i=0;i<files.length;i++){const f=files[i],safe=f.name.replace(/[\\/:*?"<>|]/g,'_').replace(/^\.+/,'_');items.push({name:`files/${String(i+1).padStart(2,'0')}_${safe}`,data:new Uint8Array(await f.blob.arrayBuffer())})}download('VERTEX_brief_'+new Date().toISOString().slice(0,10)+'.zip',zipBlob(items));toast('Архів із брифом і файлами готовий')}catch{toast('Не вдалося створити архів. Спробуйте ще раз.')}finally{button.disabled=false;button.textContent=text}}
+window.addEventListener('beforeprint',()=>{if(state.step!==7){const content=$('#step-content');const temp=document.createElement('div');temp.id='review-content';temp.className='print-injected';temp.innerHTML=reviewMarkup();content.append(temp)}});window.addEventListener('afterprint',()=>document.querySelectorAll('.print-injected').forEach(n=>n.remove()));
+renderStep();openDB().then(()=>{renderStep();if(files.length)$('#save-status').textContent='Відновлено відповіді й додані файли'}).catch(()=>{$('#save-status').textContent='Файли доступні лише до закриття вкладки. Завантажте архів.'});
+</script>
+<script>
+// ===== Інтерактивний шар: 3D-модель, вітальний екран, плани кімнат, надсилання =====
+(() => {
+'use strict';
+// Адреса обробника (Cloudflare Worker), що пересилає бриф у Telegram. Порожньо — демонстраційне надсилання.
+const API_URL = location.hostname === 'localhost' ? 'http://localhost:8787' : 'https://vertex-brief.vlad15121992.workers.dev';
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobileQuery = matchMedia('(max-width:980px)');
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+/* ---------- Обгортка моделі, яку переносимо між екранами ---------- */
+const wrap = document.createElement('div');
+wrap.className = 'model-wrap';
+wrap.innerHTML = '<canvas role="img" aria-label="3D-модель вашого простору, що будується разом із брифом"></canvas><span class="model-hint">Покрутіть</span><p class="model-caption" id="model-caption"><b>01/08</b><span></span></p>';
+const canvas = wrap.querySelector('canvas');
+let model = null;
+
+function placeModel() {
+  const target = !$('#welcome').hidden ? $('#welcome-model') : ($('#success-model') || (mobileQuery.matches ? $('#mobile-model') : $('#aside-model')));
+  if (target && wrap.parentElement !== target) target.append(wrap);
+  model?.resize();
+}
+mobileQuery.addEventListener('change', placeModel);
+
+/* ---------- Що показує модель на кожному кроці ---------- */
+const STAGE_TEXT = ['Розмічаємо ділянку', 'Зводимо стіни', 'Світло у вікнах — під ваш побут', 'Плануємо кімнати', 'Підбираємо стиль', 'Прокладаємо комунікації', 'Оздоблюємо простір', 'Модель готова до проєктування'];
+const PALETTES = {
+  'Сучасний мінімалізм': { wall: 0xd6d3cb, floor: 0x8f8a82, furn: 0x34332f },
+  'Теплий сучасний': { wall: 0xe2d2bd, floor: 0x9a6b45, furn: 0x7a4a2c },
+  'Скандинавський': { wall: 0xf1efe9, floor: 0xc9a77c, furn: 0xb7b2a6 },
+  'Класика / неокласика': { wall: 0xece3d1, floor: 0x8a5a3a, furn: 0x6b4a33 },
+  'Лофт / індустріальний': { wall: 0x9a5a44, floor: 0x6f6c66, furn: 0x4a3324 },
+  'Свій мікс / ще не знаю': { wall: 0xdcd5c8, floor: 0x8c7356, furn: 0x5b6b4a },
+};
+const CLAY = { wall: 0xbdbab1, floor: 0x77746c, furn: 0x8d8a81 };
+
+function modelConfig(stageOverride) {
+  const st = state, o = st.object;
+  // На вітальному екрані й після надсилання показуємо готову модель
+  const stage = stageOverride ?? (!$('#welcome').hidden || $('#success-model') ? 7 : st.step);
+  const style = st.style.styles[0];
+  const floor = st.materials.floor.join(' ');
+  return {
+    stage,
+    type: o.type === 'Квартира' ? 'flat' : 'house',
+    levels: Math.max(1, Math.min(3, parseInt(o.floors) || 1)),
+    rooms: st.rooms.map(r => r.type).slice(0, 6),
+    palette: stage >= 4 && style ? (PALETTES[style] || CLAY) : CLAY,
+    styleName: style,
+    floorKind: /дошка|паркет|Ламінат|Вініл/.test(floor) ? 'wood' : /плитка|Керамограніт/.test(floor) ? 'tile' : /Мікроцемент/.test(floor) ? 'concrete' : 'plain',
+  };
+}
+
+function caption(cfg) {
+  let text = STAGE_TEXT[cfg.stage];
+  if (cfg.stage === 3) text = cfg.rooms.length ? `Плануємо кімнати: ${cfg.rooms.length}` : 'Додайте кімнати — вони з’являться в моделі';
+  if (cfg.stage === 4) text = cfg.styleName ? `Стиль: ${cfg.styleName}` : 'Оберіть стиль — модель зміниться';
+  const cap = wrap.querySelector('.model-caption');
+  const label = `0${cfg.stage + 1}/08`;
+  if (cap.querySelector('b').textContent !== label) { cap.classList.remove('flash'); void cap.offsetWidth; cap.classList.add('flash'); }
+  cap.querySelector('b').textContent = label;
+  cap.querySelector('span').textContent = text;
+}
+
+/* ---------- Сама 3D-сцена ---------- */
+function createModel() {
+  if (!window.THREE) return null;
+  const T = THREE;
+  let renderer;
+  try { renderer = new T.WebGLRenderer({ canvas, antialias: true, alpha: true }); } catch { return null; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputEncoding = T.sRGBEncoding;
+
+  const scene = new T.Scene();
+  scene.fog = new T.Fog(0x111210, 30, 70);
+  const camera = new T.PerspectiveCamera(32, 1, .1, 200);
+  const hemi = new T.HemisphereLight(0xf4f4ee, 0x1a1b16, .8); scene.add(hemi);
+  const sun = new T.DirectionalLight(0xffffff, .85); sun.position.set(9, 14, 7); scene.add(sun);
+  const grid = new T.GridHelper(44, 44, 0x4f5a1c, 0x2a2c25); grid.material.transparent = true; grid.material.opacity = .55; scene.add(grid);
+
+  const W = 8, D = 6, H = 2.7, WT = .18;
+  const root = new T.Group(); scene.add(root);
+  const parts = {};
+  const lerpColors = [];
+  let built = '', cfg = null, baseY = 0;
+
+  // Частина моделі з плавною появою: show — видимість, alpha — прозорість (для розрізу)
+  function part(name, { rise = false, pop = false } = {}) {
+    const g = new T.Group(); root.add(g);
+    parts[name] = { g, show: 0, target: 0, alpha: 1, alphaTarget: 1, rise, pop, mats: [] };
+    return g;
+  }
+  function mat(p, m) { m.transparent = true; m.userData.base = m.opacity; parts[p].mats.push(m); return m; }
+  function box(p, w, h, d, m, x, y, z) { const mesh = new T.Mesh(new T.BoxGeometry(w, h, d), m); mesh.position.set(x, y, z); parts[p].g.add(mesh); return mesh; }
+  function outline(p, geo, color, opacity, pos) { const l = new T.LineSegments(new T.EdgesGeometry(geo), mat(p, new T.LineBasicMaterial({ color, opacity }))); if (pos) l.position.copy(pos); parts[p].g.add(l); return l; }
+
+  function floorTexture(kind) {
+    const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d');
+    x.fillStyle = '#ffffff'; x.fillRect(0, 0, 256, 256);
+    if (kind === 'wood') { for (let i = 0; i < 16; i++) { x.fillStyle = `rgba(0,0,0,${.04 + (i % 3) * .03})`; x.fillRect(0, i * 16, 256, 15); x.fillStyle = 'rgba(0,0,0,.12)'; x.fillRect(((i * 97) % 256), i * 16, 2, 15); } }
+    if (kind === 'tile') { x.strokeStyle = 'rgba(0,0,0,.22)'; x.lineWidth = 2; for (let i = 0; i <= 4; i++) { x.beginPath(); x.moveTo(i * 64, 0); x.lineTo(i * 64, 256); x.moveTo(0, i * 64); x.lineTo(256, i * 64); x.stroke(); } }
+    if (kind === 'concrete') { for (let i = 0; i < 900; i++) { x.fillStyle = `rgba(0,0,0,${Math.random() * .06})`; x.fillRect(Math.random() * 256, Math.random() * 256, 3, 3); } }
+    const t = new T.CanvasTexture(c); t.wrapS = t.wrapT = T.RepeatWrapping; t.repeat.set(3, 2.2); return t;
+  }
+
+  const systemPaths = [];
+  const pulse = new T.Mesh(new T.RingGeometry(.96, 1, 64), new T.MeshBasicMaterial({ color: 0xd8f530, transparent: true, opacity: 0, side: T.DoubleSide }));
+  pulse.rotation.x = -Math.PI / 2; scene.add(pulse);
+  const warmLights = [];
+
+  function build(c) {
+    root.clear(); Object.keys(parts).forEach(k => delete parts[k]); systemPaths.length = 0; warmLights.forEach(l => scene.remove(l)); warmLights.length = 0; lerpColors.length = 0;
+    const flat = c.type === 'flat';
+    baseY = flat ? 2 * H : 0;
+    const top = baseY + c.levels * H;
+
+    // Ділянка або будинок довкола квартири
+    part('site');
+    if (flat) outline('site', new T.BoxGeometry(W + 5, 5 * H + .4, D + 4), 0x6b7046, .55, new T.Vector3(0, (5 * H) / 2, 0));
+    else {
+      outline('site', new T.BoxGeometry(W + 6, .02, D + 5), 0xd8f530, .8, new T.Vector3(0, .01, 0));
+      [[-1, -1], [1, -1], [1, 1], [-1, 1]].forEach(([sx, sz]) => box('site', .12, 1.2, .12, mat('site', new T.MeshBasicMaterial({ color: 0xd8f530 })), sx * (W + 6) / 2, .6, sz * (D + 5) / 2));
+    }
+
+    // Плити перекриттів
+    part('slab');
+    const slabMat = mat('slab', new T.MeshStandardMaterial({ color: 0x55574f, roughness: 1 }));
+    box('slab', W + .3, .22, D + .3, slabMat, 0, baseY - .11, 0);
+    outline('slab', new T.BoxGeometry(W + .3, .22, D + .3), 0xd8f530, .9, new T.Vector3(0, baseY - .11, 0));
+
+    // Стіни з прорізами під вікна; перекриття піднімаються разом зі стінами
+    part('walls', { rise: true });
+    const wallMat = mat('walls', new T.MeshStandardMaterial({ color: c.palette.wall, roughness: .92 }));
+    const upperSlab = mat('walls', new T.MeshStandardMaterial({ color: 0x55574f, roughness: 1 }));
+    for (let l = 1; l <= c.levels; l++) box('walls', W + .3, .22, D + .3, upperSlab, 0, baseY + l * H, 0);
+    lerpColors.push([wallMat.color, 'wall']);
+    for (let l = 0; l < c.levels; l++) {
+      const y0 = baseY + l * H, mid = y0 + H / 2;
+      box('walls', W, H, WT, wallMat, 0, mid, D / 2);           // задня
+      box('walls', WT, H, D, wallMat, -W / 2, mid, 0);           // ліва
+      box('walls', WT, H, D, wallMat, W / 2, mid, 0);            // права
+      // передня стіна з двома вікнами: простінки
+      [[-3.4, 1.2], [0, 1.6], [3.4, 1.2]].forEach(([x, w]) => box('walls', w, H, WT, wallMat, x, mid, -D / 2));
+      [[-1.6, 2], [1.6, 2]].forEach(([x, w]) => { box('walls', w, .8, WT, wallMat, x, y0 + .4, -D / 2); box('walls', w, .5, WT, wallMat, x, y0 + H - .25, -D / 2); });
+    }
+
+    // Вікна, що світяться
+    part('windows');
+    const glass = mat('windows', new T.MeshBasicMaterial({ color: 0xffc977, opacity: .9 }));
+    const pane = (w, x, y, z, ry) => { const m = new T.Mesh(new T.PlaneGeometry(w, 1.4), glass); m.position.set(x, y, z); m.rotation.y = ry; parts.windows.g.add(m); };
+    for (let l = 0; l < c.levels; l++) {
+      const y = baseY + l * H + 1.5;
+      [-1.6, 1.6].forEach(x => pane(1.96, x, y, -D / 2 - .02, Math.PI));          // фасад — у прорізах
+      [-2.4, 0, 2.4].forEach(x => pane(1.1, x, y, D / 2 + WT / 2 + .02, 0));      // тильна сторона
+      [-1.3, 1.3].forEach(z => { pane(1.1, -W / 2 - WT / 2 - .02, y, z, -Math.PI / 2); pane(1.1, W / 2 + WT / 2 + .02, y, z, Math.PI / 2); });
+    }
+
+    // Дах для будинку
+    if (!flat) {
+      part('roof');
+      const shape = new T.Shape(); shape.moveTo(-W / 2 - .5, 0); shape.lineTo(0, 2.2); shape.lineTo(W / 2 + .5, 0); shape.lineTo(-W / 2 - .5, 0);
+      const roofGeo = new T.ExtrudeGeometry(shape, { depth: D + .8, bevelEnabled: false });
+      const roof = new T.Mesh(roofGeo, mat('roof', new T.MeshStandardMaterial({ color: 0x2c2e28, roughness: .8 })));
+      roof.position.set(0, top, -(D + .8) / 2); parts.roof.g.add(roof);
+      const edges = new T.LineSegments(new T.EdgesGeometry(roofGeo), mat('roof', new T.LineBasicMaterial({ color: 0xd8f530, opacity: .6 }))); edges.position.copy(roof.position); parts.roof.g.add(edges);
+    }
+
+    // Кімнати: перегородки й меблі на першому рівні
+    part('rooms', { pop: true });
+    const n = Math.max(c.rooms.length, 1);
+    const partMat = mat('rooms', new T.MeshStandardMaterial({ color: 0xe9e6dd, roughness: .9 }));
+    const furnMat = mat('rooms', new T.MeshStandardMaterial({ color: c.palette.furn, roughness: .7 }));
+    const accentMat = mat('rooms', new T.MeshStandardMaterial({ color: 0xd8f530, roughness: .6 }));
+    lerpColors.push([furnMat.color, 'furn']);
+    const seg = W / n;
+    for (let k = 1; k < n; k++) { const x = -W / 2 + k * seg; box('rooms', .1, H * .92, D * .55, partMat, x, baseY + H * .46, D * .2); }
+    (c.rooms.length ? c.rooms : ['Вітальня']).forEach((type, k) => {
+      const cx = -W / 2 + seg * (k + .5), y = baseY, s = Math.min(1, seg / 2.6);
+      if (/Кухня/.test(type)) { box('rooms', 2.2 * s, .9, .6, furnMat, cx, y + .45, D / 2 - .45); box('rooms', 1.2 * s, .75, .8, accentMat, cx, y + .38, 0); }
+      else if (/Спальня|Дитяча/.test(type)) { box('rooms', 1.5 * s, .45, 2, furnMat, cx, y + .23, .6); box('rooms', 1.5 * s, .25, .5, accentMat, cx, y + .55, 1.4); }
+      else if (/Ванна/.test(type)) { box('rooms', 1.6 * s, .55, .75, partMat, cx, y + .28, D / 2 - .6); box('rooms', .6 * s, .85, .45, furnMat, cx - .5 * s, y + .43, -.8); }
+      else if (/Кабінет/.test(type)) { box('rooms', 1.4 * s, .75, .7, furnMat, cx, y + .38, D / 2 - .6); box('rooms', .5, .9, .5, accentMat, cx, y + .45, D / 2 - 1.3); }
+      else if (/Гардеробна|Передпокій/.test(type)) { box('rooms', seg * .8, 2.2, .6, furnMat, cx, y + 1.1, D / 2 - .4); }
+      else { box('rooms', 2 * s, .75, .9, furnMat, cx, y + .38, 1.2); box('rooms', .9 * s, .4, .6, accentMat, cx, y + .2, -.2); }
+    });
+
+    // Підлога з фактурою
+    part('floor');
+    const floorMat = mat('floor', new T.MeshStandardMaterial({ color: c.palette.floor, roughness: .85, map: floorTexture(c.floorKind) }));
+    lerpColors.push([floorMat.color, 'floor']);
+    const fl = new T.Mesh(new T.PlaneGeometry(W - WT, D - WT), floorMat); fl.rotation.x = -Math.PI / 2; fl.position.y = baseY + .12; parts.floor.g.add(fl);
+
+    // Комунікації: електрика, вода, тепло — з «струмом», що біжить трасами
+    part('systems');
+    const y = baseY + .35, i = .35;
+    const routes = [
+      { color: 0xd8f530, pts: [[-W / 2 + i, y, -D / 2 + i], [W / 2 - i, y, -D / 2 + i], [W / 2 - i, y, D / 2 - i], [-W / 2 + i, y, D / 2 - i], [-W / 2 + i, y, -D / 2 + i], [-W / 2 + i, baseY + H - .3, -D / 2 + i], [W / 2 - i, baseY + H - .3, -D / 2 + i]] },
+      { color: 0x58b7ff, pts: [[W / 2 - i, baseY + .15, D / 2 - i], [W / 2 - 2.2, baseY + .15, D / 2 - i], [W / 2 - 2.2, baseY + .9, D / 2 - i]] },
+      { color: 0xff8a4c, pts: (() => { // змійка теплої підлоги
+        const p = [], fy = baseY + .16, z1 = -D / 2 + .8, z2 = -.2;
+        for (let k = 0; k < 6; k++) { const x = -W / 2 + .6 + k * .5; p.push(k % 2 ? [x, fy, z2] : [x, fy, z1], k % 2 ? [x, fy, z1] : [x, fy, z2]); }
+        return p; })() },
+    ];
+    routes.forEach(r => {
+      const pts = r.pts.map(p => new T.Vector3(...p));
+      parts.systems.g.add(new T.Line(new T.BufferGeometry().setFromPoints(pts), mat('systems', new T.LineBasicMaterial({ color: r.color, opacity: .9 }))));
+      const lens = [0]; for (let k = 1; k < pts.length; k++) lens.push(lens[k - 1] + pts[k].distanceTo(pts[k - 1]));
+      const dots = Array.from({ length: 9 }, () => { const m = new T.Mesh(new T.SphereGeometry(.13, 12, 12), mat('systems', new T.MeshBasicMaterial({ color: r.color }))); parts.systems.g.add(m); return m; });
+      systemPaths.push({ pts, lens, dots });
+    });
+
+    // Тепле світло всередині для фіналу
+    for (let l = 0; l < c.levels; l++) { const pl = new T.PointLight(0xffb45c, 0, 9); pl.position.set(0, baseY + l * H + 1.6, 0); scene.add(pl); warmLights.push(pl); }
+
+    built = key(c);
+  }
+  const key = c => [c.type, c.levels, c.rooms.join(','), c.floorKind].join('|');
+
+  // Цілі анімації для кожного етапу
+  function applyStage(c) {
+    const s = c.stage, cut = s >= 3 && s <= 6;
+    const set = (name, show, alpha = 1) => { if (parts[name]) { parts[name].target = show; parts[name].alphaTarget = alpha; } };
+    set('site', 1, s === 0 ? 1 : .5);
+    set('slab', 1);
+    set('walls', s >= 1 ? 1 : 0, cut ? (s === 5 ? .12 : .2) : 1);
+    set('windows', s >= 2 ? 1 : 0, s >= 7 ? 1 : s === 2 ? .55 : cut ? .2 : .35);
+    set('roof', s >= 1 && !cut ? 1 : 0);
+    set('rooms', s >= 3 ? 1 : 0);
+    set('floor', s >= 6 ? 1 : s >= 3 ? .6 : 0);
+    set('systems', s >= 5 ? 1 : 0, s === 5 ? 1 : .35);
+  }
+
+  let theta = .7, phi = 1.02, drag = null, lastT = performance.now(), visible = true, night = 0;
+  const targetPal = { wall: new T.Color(), furn: new T.Color(), floor: new T.Color() };
+
+  function update(c) {
+    cfg = c;
+    if (key(c) !== built) build(c);
+    targetPal.wall.set(c.palette.wall); targetPal.furn.set(c.palette.furn); targetPal.floor.set(c.palette.floor);
+    applyStage(c);
+  }
+
+  function resize() {
+    const w = wrap.clientWidth, h = wrap.clientHeight; if (!w || !h) return;
+    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(wrap);
+  new IntersectionObserver(([e]) => visible = e.isIntersecting).observe(wrap);
+
+  canvas.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, t: theta, p: phi }; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointermove', e => { if (!drag) return; theta = drag.t - (e.clientX - drag.x) * .01; phi = Math.min(1.35, Math.max(.55, drag.p - (e.clientY - drag.y) * .006)); });
+  canvas.addEventListener('pointerup', () => drag = null);
+  canvas.addEventListener('pointercancel', () => drag = null);
+
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const raw = Math.min(1, (now - lastT) / 1000), dt = Math.min(.05, raw); lastT = now;
+    if (!visible || document.hidden || !cfg) return;
+    // Плавність рахуємо від реального часу, щоб модель «доросла» навіть при рідких кадрах
+    const k = reduceMotion ? 1 : 1 - Math.pow(.02, raw);
+    for (const p of Object.values(parts)) {
+      p.show += (p.target - p.show) * k; p.alpha += (p.alphaTarget - p.alpha) * k;
+      p.g.visible = p.show > .01;
+      if (p.rise) p.g.scale.y = Math.max(.001, p.show), p.g.position.y = baseY * (1 - p.show);
+      if (p.pop) p.g.scale.setScalar(.6 + .4 * p.show);
+      if (p.g === parts.roof?.g) p.g.position.y = (1 - p.show) * 3;
+      p.mats.forEach(m => { m.opacity = m.userData.base * p.show * p.alpha; m.depthWrite = m.opacity > .95; });
+    }
+    lerpColors.forEach(([color, slot]) => color.lerp(targetPal[slot], k * .8));
+    // Ніч і тепле світло у фіналі
+    night += ((cfg.stage >= 7 ? 1 : 0) - night) * k * .6;
+    hemi.intensity = .8 - .45 * night; sun.intensity = .85 - .6 * night;
+    warmLights.forEach(l => l.intensity = 1.6 * night);
+    // «Струм» по трасах
+    if (parts.systems?.show > .02) systemPaths.forEach(sp => { const total = sp.lens[sp.lens.length - 1]; sp.dots.forEach((d, n) => { const dist = ((reduceMotion ? 0 : now / 1000 * 1.6) + n * total / sp.dots.length) % total; let s = 1; while (s < sp.lens.length - 1 && sp.lens[s] < dist) s++; const a = sp.pts[s - 1], b = sp.pts[s], f = (dist - sp.lens[s - 1]) / (sp.lens[s] - sp.lens[s - 1] || 1); d.position.lerpVectors(a, b, f); }); });
+    // Пульс навколо готової моделі
+    const pt = (now / 2200) % 1; pulse.position.y = baseY + .02; pulse.scale.setScalar(4 + pt * 7); pulse.material.opacity = cfg.stage >= 7 && !reduceMotion ? (1 - pt) * .5 : 0;
+    // Камера
+    if (!drag && !reduceMotion) theta += dt * .16;
+    // Відстань камери, щоб модель влазила і в широке, і у вузьке вікно
+    const flat = cfg.type === 'flat', size = flat ? 15 : 11.5 + cfg.levels;
+    const r = (size / 2) / (Math.tan(camera.fov * Math.PI / 360) * Math.min(camera.aspect, 1.25)) * 1.1;
+    const ty = flat ? baseY + 1 : baseY + cfg.levels * H * .45;
+    camera.position.set(Math.cos(theta) * Math.sin(phi) * r, ty + Math.cos(phi) * r, Math.sin(theta) * Math.sin(phi) * r);
+    camera.lookAt(0, ty, 0);
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(frame);
+  return { update, resize };
+}
+
+function refreshModel(stage) {
+  const cfg = modelConfig(stage);
+  caption(cfg);
+  model?.update(cfg);
+}
+
+/* ---------- Живий план кімнати ---------- */
+function planSvg(r) {
+  const L = parseFloat(r.length), Wd = parseFloat(r.width);
+  if (!(L > 0 && Wd > 0)) return '<p class="plan-empty">Вкажіть довжину й ширину — тут з’явиться план кімнати в масштабі.</p>';
+  const bw = 200, bh = 130, pad = 18, s = Math.min((bw - pad * 2) / L, (bh - pad * 2) / Wd);
+  const w = L * s, h = Wd * s, x = (bw - w) / 2, y = (bh - h) / 2, door = Math.min(.9 * s, w * .35, h * .5);
+  const area = r.area ? r.area : (L * Wd).toFixed(1);
+  return `<svg viewBox="0 0 ${bw} ${bh}"><rect class="room-shape" x="${x}" y="${y}" width="${w}" height="${h}"/>` +
+    `<path d="M${x + 10} ${y + h}V${y + h - door}M${x + 10} ${y + h - door}A${door} ${door} 0 0 1 ${x + 10 + door} ${y + h}" fill="none" stroke="#a4a69e" stroke-dasharray="3 3"/>` +
+    `<text x="${x + w / 2}" y="${y - 6}" text-anchor="middle" fill="#a4a69e" font-size="10" font-family="Manrope,Arial">${esc(r.length)} м</text>` +
+    `<text x="${x + w + 6}" y="${y + h / 2}" fill="#a4a69e" font-size="10" font-family="Manrope,Arial" dominant-baseline="middle">${esc(r.width)} м</text></svg>` +
+    `<div class="plan-meta"><b>${esc(area)} м²</b>${esc(r.name || r.type)}${r.height ? ` · висота ${esc(r.height)} м` : ''}</div>`;
+}
+function renderPlans() { document.querySelectorAll('[data-plan]').forEach(el => { const r = state.rooms[+el.dataset.plan]; if (r) el.innerHTML = planSvg(r); }); }
+document.addEventListener('input', e => {
+  const m = e.target.dataset?.path?.match(/^rooms\.(\d+)\.(length|width|height|area|name)$/);
+  if (m) { const el = document.querySelector(`[data-plan="${m[1]}"]`); if (el) el.innerHTML = planSvg(state.rooms[+m[1]]); }
+});
+
+/* ---------- Хуки з основного брифу ---------- */
+let refreshTimer;
+window.onStepRendered = i => {
+  ['#step-title', '#step-intro', '#mobile-model'].forEach(s => $(s).hidden = false); // після екрана «Надіслано»
+  placeModel();
+  ['#step-content', '#step-title', '#step-intro'].forEach(s => { const el = $(s); el.classList.remove('enter'); void el.offsetWidth; el.classList.add('enter'); });
+  if (i === 3) renderPlans();
+  refreshModel();
+};
+window.onStateChange = () => { clearTimeout(refreshTimer); refreshTimer = setTimeout(() => refreshModel(), 120); };
+
+/* ---------- Вітальний екран ---------- */
+const started = state.visited.length > 1 || state.contact.name;
+if (started) {
+  $('#welcome-start').firstChild.textContent = 'Продовжити бриф ';
+  $('#welcome-draft').textContent = `Чернетку знайдено: крок ${state.step + 1} з 8`;
+}
+$('#welcome-start').addEventListener('click', () => {
+  $('#welcome').hidden = true;
+  document.body.style.overflow = '';
+  placeModel(); refreshModel();
+  $('#step-title').focus({ preventScroll: true });
+});
+document.body.style.overflow = 'hidden';
+
+/* ---------- Надсилання брифу ---------- */
+function showSuccess() {
+  const name = (state.contact.name || '').split(' ')[0];
+  ['#step-title', '#step-intro', '#actions', '#mobile-model'].forEach(s => $(s).hidden = true);
+  $('#progress-fill').style.width = '100%'; $('#progress-label').textContent = 'Надіслано';
+  document.querySelectorAll('.step-button').forEach(b => { b.classList.add('complete'); b.removeAttribute('aria-current'); });
+  $('#step-content').innerHTML = `<section class="success"><p class="success-kicker">БРИФ НАДІСЛАНО</p><h1>${name ? esc(name) + ', дякуємо!' : 'Дякуємо!'}<br>Ваш простір уже у VERTEX.</h1><p>Михайло отримав відповіді${files.length ? ` і ${files.length} файл(ів)` : ''}. Далі — розмова, обміри й перші рішення.</p><div class="model-host" id="success-model"></div><div class="success-steps"><div><b>01</b><p>Зв’яжемося протягом робочого дня, щоб уточнити деталі.</p></div><div><b>02</b><p>Узгодимо обміри та виїзд на об’єкт.</p></div><div><b>03</b><p>Підготуємо склад робіт, строки й вартість проєкту.</p></div></div><div class="review-actions"><button class="button secondary" data-action="zip">Зберегти копію з файлами</button><a class="button secondary" href="https://vertexbuild.pro/">На сайт VERTEX</a></div></section>`;
+  $('#aside-model').innerHTML = '';
+  placeModel(); refreshModel(7);
+  scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+}
+
+async function sendBrief(button) {
+  const consent = $('#consent');
+  if (!consent.checked) { consent.closest('label').classList.add('invalid'); consent.focus(); toast('Підтвердьте згоду на обробку даних'); return; }
+  consent.closest('label').classList.remove('invalid');
+  button.disabled = true; $('#send-error').hidden = true; $('#send-progress').hidden = false;
+  const total = 1 + files.length; let done = 0;
+  const step = text => { done++; $('#send-bar').style.width = `${done / total * 100}%`; if (text) $('#send-status').textContent = text; };
+  try {
+    $('#send-status').textContent = 'Надсилаємо відповіді…';
+    let id = 'demo';
+    if (API_URL) {
+      const payload = { text: briefText(), brief: state, files: files.map(({ name, size, type, zone }) => ({ name, size, type, zone })), questions: missingItems() };
+      const res = await fetch(`${API_URL}/brief`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || res.status);
+      id = data.id;
+    } else await wait(900);
+    step(files.length ? `Файли: 0 з ${files.length}` : 'Готово');
+    // Файли йдуть по одному, щоб великий архів не впав цілим
+    for (let k = 0; k < files.length; k++) {
+      const f = files[k];
+      $('#send-status').textContent = `Файли: ${k + 1} з ${files.length} · ${f.name}`;
+      if (API_URL) {
+        const body = new FormData(); body.append('id', id); body.append('zone', f.zone); body.append('file', f.blob, f.name);
+        const res = await fetch(`${API_URL}/file`, { method: 'POST', body });
+        if (!res.ok) throw new Error('file');
+      } else await wait(350);
+      step();
+    }
+    state.sentAt = new Date().toISOString(); save();
+    await wait(300);
+    showSuccess();
+  } catch (error) {
+    console.error(error);
+    $('#send-progress').hidden = true; $('#send-error').hidden = false;
+    button.disabled = false; button.firstChild.textContent = 'Надіслати ще раз ';
+  }
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-action="send"]'); if (b) sendBrief(b); });
+document.addEventListener('change', e => { if (e.target.id === 'consent' && e.target.checked) e.target.closest('label').classList.remove('invalid'); });
+
+/* ---------- Старт ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  model = createModel();
+  if (!model) { document.querySelectorAll('.model-host').forEach(h => h.remove()); return; }
+  placeModel();
+  refreshModel($('#welcome').hidden ? undefined : 7); // на вітальному екрані — готовий будинок як тизер
+});
+})();
+</script>
+</body></html>

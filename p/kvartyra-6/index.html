@@ -106,7 +106,7 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
 <header class="top"><div class="wrap">
   <div class="brand"><b>VERTEX</b><span>Квартира № 6 · поверх 1 · 51,9 м²</span></div>
   <nav id="nav">
-    <a href="#tour">3D-тур</a><a href="#renders">Кадри</a><a href="#plans">Креслення</a>
+    <a href="#tour">3D-тур</a><a href="#video">Відео</a><a href="#renders">Кадри</a><a href="#plans">Креслення</a>
   </nav>
 </div></header>
 
@@ -153,7 +153,11 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
   </dl>
 </section>
 
-
+<section class="view" id="v-video" hidden>
+  <h1>Відео-прохід</h1>
+  <p class="lead">Камера на висоті очей 1,6 м: вхід, кухня-вітальня, дитяча, спальня. Відео відрендерене в Blender з тієї самої моделі.</p>
+  <div id="videoBox"></div>
+</section>
 
 <section class="view" id="v-renders" hidden>
   <h1>Кадри з моделі</h1>
@@ -177,9 +181,16 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
-const HAS_VIDEO = false;
+const HAS_VIDEO = true;
 const RENDERS = [
   ['img/still-01.jpg', 'Вид згори', 'без стелі, видно всі перегородки'],
+  ['img/still-03.jpg', 'Кухня-вітальня', 'від вхідних дверей; ліворуч двері в спальню і дитячу'],
+  ['img/still-04.jpg', 'Двері в спальню і дитячу', 'вид із кухні-вітальні'],
+  ['img/still-05.jpg', 'Дитяча', 'вікно В1 2206 × 1695'],
+  ['img/still-06.jpg', 'Спальня', 'вид від дверей'],
+  ['img/still-07.jpg', 'Спальня, вікно', 'вікно В2 1593 × 1699'],
+  ['img/still-08.jpg', 'Вхід', 'вхідні двері з боку кухні-вітальні'],
+  ['img/still-09.jpg', 'Прохід у санвузол', 'дверний проріз Д2'],
   ['img/still-02.jpg', 'План згори', 'ортогональна проєкція моделі'],
 ];
 const PLANS = [
@@ -226,7 +237,7 @@ gallery('renders', RENDERS); gallery('plans', PLANS);
 const vb = document.getElementById('videoBox');
 if (!vb) { /* вкладки відео немає */ } else if (HAS_VIDEO) {
   const v = document.createElement('video');
-  v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.src = 'tour.mp4'; 
+  v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.src = 'tour.mp4'; v.poster = 'img/still-03.jpg';
   vb.appendChild(v);
 } else {
   const n = document.createElement('p'); n.className = 'note';

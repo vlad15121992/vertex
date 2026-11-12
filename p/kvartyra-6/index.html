@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg">
+<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
+<title>Квартира № 6 VERTEX</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: липка шапка з вкладками; кожна вкладка — один робочий екран проєкту (тур, відео, кадри, креслення, інструменти). */
+:root {
+  --bg: #f3f5f7; --surface: #ffffff; --line: #d9dfe5; --fg: #17202a; --muted: #5d6b79;
+  --accent: #1d4f7a; --accent-fg: #ffffff; --soft: #e6edf3; --ok: #1f7a4d; --warn: #a15c07; --bad: #a3322b;
+  --stage: #dfe6ec;
+  --f-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --f-head: "Manrope", "Segoe UI", Arial, sans-serif;
+  --f-num: "JetBrains Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11161b; --surface: #1a2129; --line: #2d3742; --fg: #e7edf2; --muted: #9aa8b5;
+  --accent: #6fb1e6; --accent-fg: #0d1b27; --soft: #232d38; --ok: #5ccb93; --warn: #e6a84f; --bad: #ef8a80;
+  --stage: #0c1014; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #1a2129; --line: #2d3742; --fg: #e7edf2; --muted: #9aa8b5;
+  --accent: #6fb1e6; --accent-fg: #0d1b27; --soft: #232d38; --ok: #5ccb93; --warn: #e6a84f; --bad: #ef8a80;
+  --stage: #0c1014; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 10px; }
+.brand { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.brand b { font-family: var(--f-head); font-weight: 800; font-size: 18px; letter-spacing: 0.02em; }
+.brand span { color: var(--muted); font-size: 13px; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+nav a { padding: 7px 12px; border-radius: 6px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: 14px; }
+nav a:hover { color: var(--fg); background: var(--soft); }
+nav a[aria-current="page"] { background: var(--accent); color: var(--accent-fg); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+main { padding-block: 20px 48px; }
+section.view { display: flex; flex-direction: column; gap: 16px; }
+h1 { font-family: var(--f-head); font-size: 24px; font-weight: 700; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--f-head); font-size: 17px; font-weight: 700; margin: 8px 0 0; }
+p { margin: 0; max-width: 72ch; }
+.lead { color: var(--muted); }
+.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+
+/* тур */
+.stage { position: relative; background: var(--stage); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; max-height: 74vh; width: 100%; touch-action: none; }
+.stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.stage canvas:active { cursor: grabbing; }
+.hud { position: absolute; left: 12px; top: 12px; background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; font-size: 13px; pointer-events: none; }
+.hud b { font-family: var(--f-head); display: block; font-size: 14px; }
+.mini { position: absolute; right: 12px; top: 12px; width: 190px; background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line); border-radius: 6px; padding: 6px; pointer-events: none; }
+.mini svg { display: block; width: 100%; height: auto; }
+.pad { position: absolute; left: 12px; bottom: 12px; display: grid; grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(2, 44px); gap: 4px; }
+.pad button { border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 90%, transparent); color: var(--fg); border-radius: 6px; font-size: 18px; cursor: pointer; touch-action: none; user-select: none; }
+.pad button:active { background: var(--accent); color: var(--accent-fg); }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.bar .sep { width: 1px; align-self: stretch; background: var(--line); margin: 0 4px; }
+.btn { border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 6px; padding: 7px 12px; font: 500 14px var(--f-body); cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+.btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.hint { color: var(--muted); font-size: 13px; }
+
+/* факти */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); overflow: hidden; }
+.facts div { padding: 10px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 0 -1px -1px 0; }
+.facts dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.facts dd { margin: 2px 0 0; font-family: var(--f-num); font-size: 15px; }
+
+/* галереї */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+figure button { display: block; width: 100%; padding: 0; border: 0; background: var(--stage); cursor: zoom-in; }
+figure img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.plans figure img { aspect-ratio: 1.414 / 1; object-fit: contain; background: #fff; }
+figcaption { padding: 9px 12px; font-size: 13px; }
+figcaption b { display: block; font-size: 14px; }
+figcaption span { color: var(--muted); }
+video { width: 100%; max-height: 74vh; background: #000; border-radius: 8px; border: 1px solid var(--line); display: block; }
+.note { border: 1px solid var(--line); border-left: 3px solid var(--warn); background: var(--surface); border-radius: 6px; padding: 10px 14px; max-width: 80ch; }
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(8, 11, 14, 0.92); display: grid; place-items: center; padding: 16px; cursor: zoom-out; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; }
+
+/* таблиця */
+.tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 600; background: var(--soft); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; white-space: nowrap; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid currentColor; white-space: nowrap; }
+.pill.ok { color: var(--ok); } .pill.warn { color: var(--warn); } .pill.bad { color: var(--bad); }
+ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-direction: column; gap: 6px; }
+@media (max-width: 640px) { .mini { width: 120px; } .stage { aspect-ratio: 4 / 5; } h1 { font-size: 20px; } }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><b>VERTEX</b><span>Квартира № 6 · поверх 1 · 51,9 м²</span></div>
+  <nav id="nav">
+    <a href="#tour">3D-тур</a><a href="#renders">Кадри</a><a href="#plans">Креслення</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<section class="view" id="v-tour">
+  <h1>Коробка квартири: прохід по кімнатах</h1>
+  <p class="lead">Модель збудована з узгодженого плану в реальних міліметрах: несучі стіни, перегородки 125 мм, вікна, дверні прорізи, стеля 2,79 м. Меблів і оздоблення ще немає.</p>
+  <div class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="loading" id="loading">Завантажую модель…</div>
+    <div class="hud" id="hud" hidden><b id="hudRoom">—</b><span id="hudInfo"></span></div>
+    <div class="mini" id="mini" hidden></div>
+    <div class="pad" id="pad" hidden>
+      <button type="button" data-k="turnL" aria-label="Повернути ліворуч">↺</button>
+      <button type="button" data-k="fwd" aria-label="Вперед">▲</button>
+      <button type="button" data-k="turnR" aria-label="Повернути праворуч">↻</button>
+      <button type="button" data-k="left" aria-label="Крок ліворуч">◀</button>
+      <button type="button" data-k="back" aria-label="Назад">▼</button>
+      <button type="button" data-k="right" aria-label="Крок праворуч">▶</button>
+    </div>
+  </div>
+  <div class="bar">
+    <button class="btn" type="button" id="mWalk" aria-pressed="true">Прохід</button>
+    <button class="btn" type="button" id="mTop" aria-pressed="false">Згори</button>
+    <button class="btn" type="button" id="mAuto" aria-pressed="false">Автотур</button>
+    <span class="sep"></span>
+    <button class="btn" type="button" data-go="entry">Вхід</button>
+    <button class="btn" type="button" data-go="living">Кухня-вітальня</button>
+    <button class="btn" type="button" data-go="kids">Дитяча</button>
+    <button class="btn" type="button" data-go="bed">Спальня</button>
+    <button class="btn" type="button" data-go="bath">Санвузол</button>
+  </div>
+  <p class="hint">Прохід: тягніть мишею або пальцем, щоб озирнутися; клацніть по підлозі, щоб підійти; клавіші W A S D або стрілки на екрані. Згори: тягніть, щоб обертати, коліщатко — масштаб.</p>
+  <dl class="facts">
+    <div><dt>Висота стелі</dt><dd>2,79 м</dd></div>
+    <div><dt>Дитяча</dt><dd>3550 × 3050 · ≈10,8 м²</dd></div>
+    <div><dt>Спальня</dt><dd>≈14,9 м²</dd></div>
+    <div><dt>Кухня-вітальня</dt><dd>≈18,9 м²</dd></div>
+    <div><dt>Санвузол</dt><dd>1961 × 2943 · 5,8 м²</dd></div>
+    <div><dt>Вікно В1</dt><dd>2206 × 1695 · підв. 845</dd></div>
+    <div><dt>Вікно В2</dt><dd>1593 × 1699 · підв. 848</dd></div>
+    <div><dt>Двері</dt><dd>висота 2100, уточнюється</dd></div>
+  </dl>
+</section>
+
+
+
+<section class="view" id="v-renders" hidden>
+  <h1>Кадри з моделі</h1>
+  <p class="lead">Рендери моделі. Клацніть, щоб відкрити на весь екран.</p>
+  <div class="grid" id="renders"></div>
+</section>
+
+<section class="view" id="v-plans" hidden>
+  <h1>Креслення</h1>
+  <p class="lead">Аркуші A3, з яких збудовано модель. Клацніть, щоб збільшити.</p>
+  <div class="grid plans" id="plans"></div>
+</section>
+
+
+
+</main>
+
+<div class="lightbox" id="lightbox" hidden><img id="lightboxImg" alt=""></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const HAS_VIDEO = false;
+const RENDERS = [
+  ['img/still-01.jpg', 'Вид згори', 'без стелі, видно всі перегородки'],
+  ['img/still-02.jpg', 'План згори', 'ортогональна проєкція моделі'],
+];
+const PLANS = [
+  ['img/plan_rooms.png', 'План з перегородками', 'узгоджений замовницею 12.11.2026'],
+  ['img/plan.png', 'Обмірний план', 'несучі стіни, вікна, розгортка стіни з вікнами'],
+];
+
+// ---------- вкладки ----------
+const VIEWS = ['tour', 'video', 'renders', 'plans'].filter(v => document.getElementById('v-' + v));
+let tourActive = true;
+function route() {
+  const h = (location.hash || '#tour').slice(1);
+  const v = VIEWS.includes(h) ? h : 'tour';
+  VIEWS.forEach(n => { document.getElementById('v-' + n).hidden = n !== v; });
+  document.querySelectorAll('#nav a').forEach(a => {
+    if (a.getAttribute('href') === '#' + v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  tourActive = v === 'tour';
+  if (tourActive && window.tourResize) window.tourResize();
+  if (v !== 'video') { const vd = document.querySelector('video'); if (vd) vd.pause(); }
+}
+window.addEventListener('hashchange', route);
+
+// ---------- галереї ----------
+function gallery(id, items) {
+  const box = document.getElementById(id);
+  items.forEach(([src, title, sub]) => {
+    const f = document.createElement('figure');
+    const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Збільшити: ' + title);
+    const i = document.createElement('img'); i.src = src; i.alt = title; i.loading = 'lazy';
+    b.appendChild(i); b.addEventListener('click', () => openBox(src, title));
+    const c = document.createElement('figcaption');
+    const t = document.createElement('b'); t.textContent = title;
+    const s = document.createElement('span'); s.textContent = sub;
+    c.append(t, s); f.append(b, c); box.appendChild(f);
+  });
+}
+const lb = document.getElementById('lightbox'), lbi = document.getElementById('lightboxImg');
+function openBox(src, alt) { lbi.src = src; lbi.alt = alt; lb.hidden = false; }
+lb.addEventListener('click', () => { lb.hidden = true; });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.hidden = true; });
+gallery('renders', RENDERS); gallery('plans', PLANS);
+
+const vb = document.getElementById('videoBox');
+if (!vb) { /* вкладки відео немає */ } else if (HAS_VIDEO) {
+  const v = document.createElement('video');
+  v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.src = 'tour.mp4'; 
+  vb.appendChild(v);
+} else {
+  const n = document.createElement('p'); n.className = 'note';
+  n.textContent = 'Відео ще рендериться на комп\'ютері (близько 1000 кадрів). Щойно буде готове, воно з\'явиться на цій вкладці. Поки що те саме можна побачити кнопкою «Автотур» у 3D-турі.';
+  vb.appendChild(n);
+}
+route();
+
+// ---------- 3D-тур ----------
+(function () {
+  const stage = document.getElementById('stage'), cv = document.getElementById('cv');
+  const loading = document.getElementById('loading');
+  if (!window.THREE || !THREE.GLTFLoader) { loading.textContent = 'Не вдалося завантажити 3D-бібліотеку. Оновіть сторінку.'; return; }
+
+  // геометрія плану (мм) — для міні-карти і назв приміщень
+  const T = 380, W = 380, K = 268, B = 184, RW = 7864, RH = 6609, RH2 = 4774, KW = 4580;
+  const xb0 = RW + W, xb1 = xb0 + 1961, xr = xb1 + 380, BH = 2943, PX = 3550, PY = 3050, TH = 125, DGX = 148;
+  const L = [0, 413, 2619, 3931, 5513, 6609], R = [0, 1962, 2802, 3320, 4306, 4774];
+  const EYE = 1.6;
+  const ROUTE = [[1,[7450,3813],[4500,2500]],[80,[6300,3000],[3700,1200]],[150,[5700,2100],[5700,-500]],[215,[5700,2100],[9000,2380]],
+    [280,[5600,2500],[5300,6000]],[345,[5000,2650],[3000,2650]],[425,[3000,2600],[0,1500]],[500,[1800,1600],[-300,1500]],
+    [570,[1900,1750],[1500,3050]],[630,[3000,2600],[3600,2650]],[700,[4350,2650],[4500,3600]],[765,[4874,3455],[4118,3942]],
+    [850,[3362,4430],[1500,5200]],[920,[2300,5000],[-300,4700]],[1000,[2300,5000],[2300,3175]],[1060,[2400,5000],[4300,4100]]];
+  const SPOTS = { entry: [[7450, 3813], [4500, 2500]], living: [[5700, 2400], [5700, -500]], kids: [[2900, 2500], [0, 900]],
+                  bed: [[3300, 4500], [600, 5200]], bath: [[8550, 2650], [10000, 400]] };
+
+  const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 0.9;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xcfe0f2);
+  const cam = new THREE.PerspectiveCamera(72, 16 / 9, 0.05, 200);
+  cam.rotation.order = 'YXZ';
+  const camTop = new THREE.PerspectiveCamera(40, 16 / 9, 0.1, 300);
+  camTop.position.set(8.5, 14, 13.5);
+  const orbit = new THREE.OrbitControls(camTop, cv);
+  orbit.target.set(5.1, 0.5, 3.3); orbit.enableDamping = true; orbit.maxPolarAngle = Math.PI * 0.49; orbit.enabled = false;
+  orbit.minDistance = 4; orbit.maxDistance = 40; orbit.update();
+
+  scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x8f8a80, 0.42));
+  const sun = new THREE.DirectionalLight(0xfff3df, 2.4);
+  sun.position.set(5.1 - 16, 11, 3.3 - 5); sun.target.position.set(5.1, 0, 3.3); scene.add(sun, sun.target);
+  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+  const sc = sun.shadow.camera; sc.left = -9; sc.right = 9; sc.top = 9; sc.bottom = -9; sc.near = 1; sc.far = 60;
+  sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.03;
+  [[1.8, 1.5, 0.35], [2.0, 4.9, 0.4], [5.2, 1.3, 0.55], [6.5, 3.3, 0.55], [9.2, 1.5, 0.4]].forEach(([x, z, i]) => {
+    const p = new THREE.PointLight(0xfff0dc, i * 1.25, 8, 1.8); p.position.set(x, 2.5, z); scene.add(p);
+  });
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshLambertMaterial({ color: 0x8c9684 }));
+  ground.rotation.x = -Math.PI / 2; ground.position.y = -0.88; scene.add(ground);
+
+  let colliders = [], floors = [], ceiling = [];
+  let mode = 'walk', yaw = 0, pitch = -0.05, goal = null, autoT = null, lastT = 0;
+  const keys = {};
+
+  function lookFrom(p, t) { cam.position.set(p[0] / 1000, EYE, p[1] / 1000); yaw = Math.atan2(-(t[0] - p[0]), -(t[1] - p[1])); pitch = -0.06; }
+  lookFrom(SPOTS.entry[0], SPOTS.entry[1]);
+
+  const fail = () => { loading.textContent = 'Модель не завантажилась. Оновіть сторінку.'; };
+  fetch('korobka.json').then(r => r.json()).then(j => { const s = atob(j.glb), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i);
+  new THREE.GLTFLoader().parse(u.buffer, '', g => {
+    g.scene.traverse(o => {
+      if (!o.isMesh) return;
+      const mn = (o.material && o.material.name) || '';
+      const glass = mn.indexOf('Скло') === 0;
+      if (glass) { o.material.transparent = true; o.material.opacity = 0.14; o.material.depthWrite = false; o.material.roughness = 0.05; }
+      else { o.castShadow = true; o.receiveShadow = true; colliders.push(o); }
+      if (o.name.indexOf('Стеля') === 0) ceiling.push(o);
+      if (o.name.indexOf('Підлога') === 0 || o.name.indexOf('Поріг') === 0) floors.push(o);
+      if (o.material) o.material.side = THREE.FrontSide;
+    });
+    scene.add(g.scene);
+    loading.hidden = true;
+    ['hud', 'mini', 'pad'].forEach(id => { document.getElementById(id).hidden = false; });
+    buildMini();
+  }, fail); }).catch(fail);
+
+  // ---------- міні-карта ----------
+  let miniDot;
+  function buildMini() {
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', `${-T - 60} ${-T - 60} ${xr + T + 120} ${RH + 2 * T + 120}`);
+    const add = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; };
+    const walls = [[-T, -T, xr + T, T], [-T, 0, T, RH], [-T, RH, KW + K + T, T], [KW, RH2 + K, K, RH - RH2 - K], [KW, RH2, xb0 - KW, K],
+      [RW, 0, W, R[1]], [RW, R[2], W, R[3] - R[2]], [RW, R[4], W, RH2 - R[4]], [xb0, BH, xb1 - xb0, B], [xb1, 0, xr - xb1, BH + B]];
+    walls.forEach(([x, y, w, h]) => add('rect', { x, y, width: w, height: h, fill: 'var(--fg)' }));
+    [[L[1], L[2]], [L[3], L[4]]].forEach(([a, b]) => add('rect', { x: -T, y: a, width: T, height: b - a, fill: 'var(--accent)' }));
+    [[0, PY, PX, TH], [PX, 0, TH, 2250], [PX, PY, TH, TH]].forEach(([x, y, w, h]) => add('rect', { x, y, width: w, height: h, fill: 'var(--muted)' }));
+    const DX = KW - PX, DY = RH2 - (PY + TH), P = t => [PX + DX * t, PY + TH + DY * t];
+    [[0, 0.27], [0.69, 1]].forEach(([a, b]) => { const [x1, y1] = P(a), [x2, y2] = P(b);
+      add('polygon', { points: `${x1},${y1} ${x1 + DGX},${y1} ${x2 + DGX},${y2} ${x2},${y2}`, fill: 'var(--muted)' }); });
+    miniDot = add('path', { d: 'M 0 -330 L 230 250 L 0 130 L -230 250 Z', fill: '#e2542f', stroke: '#fff', 'stroke-width': 40 });
+    document.getElementById('mini').appendChild(svg);
+  }
+
+  function roomAt(x, y) {
+    if (x > xb0 - 190) return y < BH + 90 ? ['Санвузол', '5,8 м²'] : ['Вхід', 'двері Д1'];
+    if (x > RW) return ['Проріз', 'стіна 380 мм'];
+    if (y < PY + TH / 2 && x < PX + TH / 2) return ['Дитяча', '≈ 10,8 м² · 3550 × 3050'];
+    const dx = PX + DGX / 2 + (y - (PY + TH)) * (KW - PX) / (RH2 - PY - TH);
+    if (y > RH2 || (y > PY + TH / 2 && x < dx)) return ['Спальня', '≈ 14,9 м²'];
+    return ['Кухня-вітальня', '≈ 18,9 м²'];
+  }
+
+  // ---------- рух ----------
+  const ray = new THREE.Raycaster();
+  function blocked(from, dir, dist) {
+    ray.set(new THREE.Vector3(from.x, 0.9, from.z), dir); ray.far = dist + 0.28;
+    return ray.intersectObjects(colliders, false).length > 0;
+  }
+  function tryMove(dx, dz) {
+    const len = Math.hypot(dx, dz); if (len < 1e-6) return false;
+    const p = cam.position;
+    const full = new THREE.Vector3(dx / len, 0, dz / len);
+    if (!blocked(p, full, len)) { p.x += dx; p.z += dz; return true; }
+    let moved = false;
+    if (Math.abs(dx) > 1e-6 && !blocked(p, new THREE.Vector3(Math.sign(dx), 0, 0), Math.abs(dx))) { p.x += dx; moved = true; }
+    if (Math.abs(dz) > 1e-6 && !blocked(p, new THREE.Vector3(0, 0, Math.sign(dz)), Math.abs(dz))) { p.z += dz; moved = true; }
+    return moved;
+  }
+
+  // згладжений маршрут автотуру (як у відео)
+  function routeSamples() {
+    const pos = [], ang = []; let prev = null; const ks = [];
+    ROUTE.forEach(([f, p, t]) => { let a = Math.atan2(-(t[0] - p[0]), -(t[1] - p[1]));
+      if (prev !== null) { while (a - prev > Math.PI) a -= 2 * Math.PI; while (a - prev < -Math.PI) a += 2 * Math.PI; }
+      prev = a; ks.push([f, p, a]); });
+    for (let i = 0; i < ks.length - 1; i++) { const [f0, p0, a0] = ks[i], [f1, p1, a1] = ks[i + 1];
+      for (let f = f0; f < f1; f++) { const u = (f - f0) / (f1 - f0);
+        pos.push([p0[0] + (p1[0] - p0[0]) * u, p0[1] + (p1[1] - p0[1]) * u]); ang.push(a0 + (a1 - a0) * u); } }
+    pos.push(ks[ks.length - 1][1]); ang.push(ks[ks.length - 1][2]);
+    const sm = (arr, r, vec) => arr.map((_, i) => { const lo = Math.max(0, i - r), hi = Math.min(arr.length - 1, i + r), n = hi - lo + 1;
+      if (vec) { let x = 0, y = 0; for (let j = lo; j <= hi; j++) { x += arr[j][0]; y += arr[j][1]; } return [x / n, y / n]; }
+      let s = 0; for (let j = lo; j <= hi; j++) s += arr[j]; return s / n; });
+    return [sm(pos, 9, true), sm(ang, 16, false)];
+  }
+  const [rPos, rYaw] = routeSamples();
+
+  function setMode(m) {
+    mode = m; goal = null; autoT = m === 'auto' ? performance.now() : null;
+    orbit.enabled = m === 'top';
+    ceiling.forEach(o => { o.visible = m !== 'top'; });
+    document.getElementById('mWalk').setAttribute('aria-pressed', m === 'walk');
+    document.getElementById('mTop').setAttribute('aria-pressed', m === 'top');
+    document.getElementById('mAuto').setAttribute('aria-pressed', m === 'auto');
+    document.getElementById('pad').hidden = m !== 'walk';
+  }
+  document.getElementById('mWalk').addEventListener('click', () => setMode('walk'));
+  document.getElementById('mTop').addEventListener('click', () => setMode('top'));
+  document.getElementById('mAuto').addEventListener('click', () => setMode(mode === 'auto' ? 'walk' : 'auto'));
+  document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+    const s = SPOTS[b.dataset.go]; setMode('walk'); lookFrom(s[0], s[1]);
+  }));
+
+  // миша / палець
+  let drag = null;
+  cv.addEventListener('pointerdown', e => { if (mode === 'top') return; drag = { x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY }; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', e => {
+    if (!drag || mode === 'top') return;
+    if (mode === 'auto' && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 6) setMode('walk');
+    yaw -= (e.clientX - drag.x) * 0.0045; pitch = Math.max(-1.2, Math.min(1.2, pitch - (e.clientY - drag.y) * 0.0045));
+    drag.x = e.clientX; drag.y = e.clientY;
+  });
+  cv.addEventListener('pointerup', e => {
+    if (!drag) return;
+    const still = Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) < 6; drag = null;
+    if (!still || mode !== 'walk') return;
+    const r = cv.getBoundingClientRect();
+    const m = new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    const rc = new THREE.Raycaster(); rc.setFromCamera(m, cam);
+    const hit = rc.intersectObjects(colliders, false)[0];
+    if (hit && floors.indexOf(hit.object) >= 0) goal = { x: hit.point.x, z: hit.point.z };
+  });
+  cv.addEventListener('pointercancel', () => { drag = null; });
+  const KEYMAP = { KeyW: 'fwd', ArrowUp: 'fwd', KeyS: 'back', ArrowDown: 'back', KeyA: 'left', KeyD: 'right', ArrowLeft: 'turnL', ArrowRight: 'turnR', KeyQ: 'turnL', KeyE: 'turnR' };
+  window.addEventListener('keydown', e => { if (!tourActive || !KEYMAP[e.code] || e.target.tagName === 'INPUT') return; keys[KEYMAP[e.code]] = true; if (mode === 'auto') setMode('walk'); e.preventDefault(); });
+  window.addEventListener('keyup', e => { if (KEYMAP[e.code]) keys[KEYMAP[e.code]] = false; });
+  document.querySelectorAll('#pad button').forEach(b => {
+    const k = b.dataset.k;
+    b.addEventListener('pointerdown', e => { keys[k] = true; b.setPointerCapture(e.pointerId); });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(n => b.addEventListener(n, () => { keys[k] = false; }));
+  });
+
+  function resize() {
+    const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+    renderer.setSize(w, h, false); cam.aspect = camTop.aspect = w / h;
+    cam.fov = w < h ? 86 : 72; cam.updateProjectionMatrix(); camTop.updateProjectionMatrix();
+  }
+  window.tourResize = resize;
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(stage); else window.addEventListener('resize', resize);
+  resize();
+
+  const hudRoom = document.getElementById('hudRoom'), hudInfo = document.getElementById('hudInfo');
+  function frame(t) {
+    requestAnimationFrame(frame);
+    const dt = Math.min(0.05, (t - lastT) / 1000 || 0); lastT = t;
+    if (!tourActive) return;
+    if (mode === 'top') { orbit.update(); renderer.render(scene, camTop); hudRoom.textContent = 'Вид згори'; hudInfo.textContent = 'стелю приховано'; if (miniDot) miniDot.setAttribute('opacity', 0); return; }
+    if (mode === 'auto') {
+      let f = ((t - autoT) / 1000) * 24; if (f >= rPos.length - 1) { autoT = t; f = 0; }
+      const i = Math.floor(f), u = f - i, a = rPos[i], b = rPos[Math.min(i + 1, rPos.length - 1)];
+      cam.position.set((a[0] + (b[0] - a[0]) * u) / 1000, EYE, (a[1] + (b[1] - a[1]) * u) / 1000);
+      yaw = rYaw[i] + (rYaw[Math.min(i + 1, rYaw.length - 1)] - rYaw[i]) * u; pitch = -0.07;
+    } else {
+      const sp = 1.7 * dt, fx = -Math.sin(yaw), fz = -Math.cos(yaw);
+      if (keys.turnL) yaw += 1.6 * dt; if (keys.turnR) yaw -= 1.6 * dt;
+      let mx = 0, mz = 0;
+      if (keys.fwd) { mx += fx; mz += fz; } if (keys.back) { mx -= fx; mz -= fz; }
+      if (keys.left) { mx += fz; mz -= fx; } if (keys.right) { mx -= fz; mz += fx; }
+      if (mx || mz) { goal = null; const l = Math.hypot(mx, mz); tryMove(mx / l * sp, mz / l * sp); }
+      else if (goal) {
+        const dx = goal.x - cam.position.x, dz = goal.z - cam.position.z, d = Math.hypot(dx, dz);
+        if (d < 0.12 || !tryMove(dx / d * Math.min(d, 2.2 * dt), dz / d * Math.min(d, 2.2 * dt))) goal = null;
+      }
+    }
+    cam.rotation.set(pitch, yaw, 0);
+    renderer.render(scene, cam);
+    const px = cam.position.x * 1000, py = cam.position.z * 1000, rm = roomAt(px, py);
+    hudRoom.textContent = rm[0]; hudInfo.textContent = rm[1];
+    if (miniDot) { miniDot.setAttribute('opacity', 1); miniDot.setAttribute('transform', `translate(${px} ${py}) rotate(${-yaw * 180 / Math.PI})`); }
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>

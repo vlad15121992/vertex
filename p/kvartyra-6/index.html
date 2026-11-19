@@ -106,15 +106,15 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
 <header class="top"><div class="wrap">
   <div class="brand"><b>VERTEX</b><span>Квартира № 6 · поверх 1 · 51,9 м²</span></div>
   <nav id="nav">
-    <a href="#tour">3D-тур</a><a href="#video">Відео</a><a href="#renders">Кадри</a><a href="#plans">Креслення</a>
+    <a href="#tour">3D-тур</a><a href="#renders">Кадри</a><a href="#plans">Креслення</a>
   </nav>
 </div></header>
 
 <main class="wrap">
 
 <section class="view" id="v-tour">
-  <h1>Коробка квартири: прохід по кімнатах</h1>
-  <p class="lead">Модель збудована з узгодженого плану в реальних міліметрах: несучі стіни, перегородки 125 мм, вікна, дверні прорізи, стеля 2,79 м. Меблів і оздоблення ще немає.</p>
+  <h1>Квартира з меблями: прохід по кімнатах</h1>
+  <p class="lead">Модель збудована з узгодженого плану в реальних міліметрах: несучі стіни, перегородки 125 мм, вікна, дверні прорізи, стеля 2,79 м. Меблі розставлено за вашим плануванням. Кнопками під моделлю меблі й покриття підлоги можна вимкнути, щоб побачити порожню квартиру.</p>
   <div class="stage" id="stage">
     <canvas id="cv"></canvas>
     <div class="loading" id="loading">Завантажую модель…</div>
@@ -134,12 +134,18 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
     <button class="btn" type="button" id="mTop" aria-pressed="false">Згори</button>
     <button class="btn" type="button" id="mAuto" aria-pressed="false">Автотур</button>
     <span class="sep"></span>
+    <button class="btn" type="button" id="vA" hidden>А</button>
+    <button class="btn" type="button" id="vB" hidden>Б</button>
+    <button class="btn" type="button" id="tFur" aria-pressed="true">Меблі</button>
+    <button class="btn" type="button" id="tFloor" aria-pressed="true">Покриття підлоги</button>
+    <span class="sep"></span>
     <button class="btn" type="button" data-go="entry">Вхід</button>
     <button class="btn" type="button" data-go="living">Кухня-вітальня</button>
     <button class="btn" type="button" data-go="kids">Дитяча</button>
     <button class="btn" type="button" data-go="bed">Спальня</button>
     <button class="btn" type="button" data-go="bath">Санвузол</button>
   </div>
+  <div id="varNote" hidden></div>
   <p class="hint">Прохід: тягніть мишею або пальцем, щоб озирнутися; клацніть по підлозі, щоб підійти; клавіші W A S D або стрілки на екрані. Згори: тягніть, щоб обертати, коліщатко — масштаб.</p>
   <dl class="facts">
     <div><dt>Висота стелі</dt><dd>2,79 м</dd></div>
@@ -153,15 +159,11 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
   </dl>
 </section>
 
-<section class="view" id="v-video" hidden>
-  <h1>Відео-прохід</h1>
-  <p class="lead">Камера на висоті очей 1,6 м: вхід, кухня-вітальня, дитяча, спальня. Відео відрендерене в Blender з тієї самої моделі.</p>
-  <div id="videoBox"></div>
-</section>
+
 
 <section class="view" id="v-renders" hidden>
   <h1>Кадри з моделі</h1>
-  <p class="lead">Рендери моделі. Клацніть, щоб відкрити на весь екран.</p>
+  <p class="lead">Кадри зʼявляться тут після узгодження розстановки меблів.</p>
   <div class="grid" id="renders"></div>
 </section>
 
@@ -181,25 +183,15 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
-const HAS_VIDEO = true;
-const RENDERS = [
-  ['img/still-01.jpg', 'Вид згори', 'без стелі, видно всі перегородки'],
-  ['img/still-03.jpg', 'Кухня-вітальня', 'від вхідних дверей; ліворуч двері в спальню і дитячу'],
-  ['img/still-04.jpg', 'Двері в спальню і дитячу', 'вид із кухні-вітальні'],
-  ['img/still-05.jpg', 'Дитяча', 'вікно В1 2206 × 1695'],
-  ['img/still-06.jpg', 'Спальня', 'вид від дверей'],
-  ['img/still-07.jpg', 'Спальня, вікно', 'вікно В2 1593 × 1699'],
-  ['img/still-08.jpg', 'Вхід', 'вхідні двері з боку кухні-вітальні'],
-  ['img/still-09.jpg', 'Прохід у санвузол', 'дверний проріз Д2'],
-  ['img/still-02.jpg', 'План згори', 'ортогональна проєкція моделі'],
-];
+const HAS_VIDEO = false;
+const RENDERS = [];
 const PLANS = [
-  ['img/plan_rooms.png', 'План з перегородками', 'узгоджений замовницею 12.11.2026'],
+  ['img/plan_rooms.png', 'План з перегородками', 'узгоджений 12.11.2026'],
   ['img/plan.png', 'Обмірний план', 'несучі стіни, вікна, розгортка стіни з вікнами'],
 ];
 
 // ---------- вкладки ----------
-const VIEWS = ['tour', 'video', 'renders', 'plans'].filter(v => document.getElementById('v-' + v));
+const VIEWS = ['tour', 'renders', 'plans'];
 let tourActive = true;
 function route() {
   const h = (location.hash || '#tour').slice(1);
@@ -237,7 +229,7 @@ gallery('renders', RENDERS); gallery('plans', PLANS);
 const vb = document.getElementById('videoBox');
 if (!vb) { /* вкладки відео немає */ } else if (HAS_VIDEO) {
   const v = document.createElement('video');
-  v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.src = 'tour.mp4'; v.poster = 'img/still-03.jpg';
+  v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.src = 'tour.mp4'; v.poster = 'img/m-03.jpg';
   vb.appendChild(v);
 } else {
   const n = document.createElement('p'); n.className = 'note';
@@ -260,7 +252,7 @@ route();
   const ROUTE = [[1,[7450,3813],[4500,2500]],[80,[6300,3000],[3700,1200]],[150,[5700,2100],[5700,-500]],[215,[5700,2100],[9000,2380]],
     [280,[5600,2500],[5300,6000]],[345,[5000,2650],[3000,2650]],[425,[3000,2600],[0,1500]],[500,[1800,1600],[-300,1500]],
     [570,[1900,1750],[1500,3050]],[630,[3000,2600],[3600,2650]],[700,[4350,2650],[4500,3600]],[765,[4874,3455],[4118,3942]],
-    [850,[3362,4430],[1500,5200]],[920,[2300,5000],[-300,4700]],[1000,[2300,5000],[2300,3175]],[1060,[2400,5000],[4300,4100]]];
+    [850,[3362,4430],[1500,5200]],[920,[2500,4080],[-300,4700]],[1000,[1900,4080],[2000,6600]],[1060,[2300,4080],[2300,3175]]];
   const SPOTS = { entry: [[7450, 3813], [4500, 2500]], living: [[5700, 2400], [5700, -500]], kids: [[2900, 2500], [0, 900]],
                   bed: [[3300, 4500], [600, 5200]], bath: [[8550, 2650], [10000, 400]] };
 
@@ -268,7 +260,7 @@ route();
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.9;
+  renderer.toneMappingExposure = 1.0;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -282,7 +274,7 @@ route();
   orbit.target.set(5.1, 0.5, 3.3); orbit.enableDamping = true; orbit.maxPolarAngle = Math.PI * 0.49; orbit.enabled = false;
   orbit.minDistance = 4; orbit.maxDistance = 40; orbit.update();
 
-  scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x8f8a80, 0.42));
+  scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x9a958c, 0.52));
   const sun = new THREE.DirectionalLight(0xfff3df, 2.4);
   sun.position.set(5.1 - 16, 11, 3.3 - 5); sun.target.position.set(5.1, 0, 3.3); scene.add(sun, sun.target);
   sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
@@ -294,7 +286,10 @@ route();
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshLambertMaterial({ color: 0x8c9684 }));
   ground.rotation.x = -Math.PI / 2; ground.position.y = -0.88; scene.add(ground);
 
-  let colliders = [], floors = [], ceiling = [];
+  let colliders = [], floors = [], ceiling = [], solid = [], furA = [], furB = [], lintels = [];
+  let variant = 'A', furOn = true;
+  const bare = new THREE.MeshStandardMaterial({ color: 0x8f8d88, roughness: 0.8 });
+  const maxAniso = renderer.capabilities.getMaxAnisotropy();
   let mode = 'walk', yaw = 0, pitch = -0.05, goal = null, autoT = null, lastT = 0;
   const keys = {};
 
@@ -309,16 +304,38 @@ route();
       const mn = (o.material && o.material.name) || '';
       const glass = mn.indexOf('Скло') === 0;
       if (glass) { o.material.transparent = true; o.material.opacity = 0.14; o.material.depthWrite = false; o.material.roughness = 0.05; }
-      else { o.castShadow = true; o.receiveShadow = true; colliders.push(o); }
+      else { o.castShadow = true; o.receiveShadow = true; solid.push(o); }
+      if (o.name.indexOf('МА_') === 0) furA.push(o);
+      if (o.name.indexOf('МБ_') === 0) furB.push(o);
+      if ((o.name.indexOf('Д3') === 0 || o.name.indexOf('Д4') === 0) && o.name.indexOf('перемичка') > 0) lintels.push(o);
+      if (o.material && o.material.map) o.material.map.anisotropy = Math.min(8, maxAniso);
       if (o.name.indexOf('Стеля') === 0) ceiling.push(o);
-      if (o.name.indexOf('Підлога') === 0 || o.name.indexOf('Поріг') === 0) floors.push(o);
+      if (o.name.indexOf('Підлога') === 0 || o.name.indexOf('Поріг') === 0) { floors.push(o); o.userData.finish = o.material; }
       if (o.material) o.material.side = THREE.FrontSide;
     });
     scene.add(g.scene);
+    applyVariant();
     loading.hidden = true;
     ['hud', 'mini', 'pad'].forEach(id => { document.getElementById(id).hidden = false; });
     buildMini();
   }, fail); }).catch(fail);
+
+  function refresh() { colliders = solid.filter(o => o.visible); }
+  function toggle(id, fn) { const b = document.getElementById(id); b.addEventListener('click', () => { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); fn(on); refresh(); }); }
+  const NOTES = { A: '', B: '' };
+  function applyVariant() {
+    furA.forEach(o => { o.visible = furOn && variant === 'A'; });
+    furB.forEach(o => { o.visible = furOn && variant === 'B'; });
+    lintels.forEach(o => { o.visible = !(furOn && variant === 'B'); });
+    document.getElementById('vA').setAttribute('aria-pressed', variant === 'A');
+    document.getElementById('vB').setAttribute('aria-pressed', variant === 'B');
+    document.getElementById('varNote').textContent = NOTES[variant];
+    goal = null; refresh();
+  }
+  document.getElementById('vA').addEventListener('click', () => { variant = 'A'; applyVariant(); });
+  document.getElementById('vB').addEventListener('click', () => { variant = 'B'; applyVariant(); });
+  toggle('tFur', on => { furOn = on; applyVariant(); });
+  toggle('tFloor', on => { floors.forEach(o => { o.material = on ? o.userData.finish : bare; }); });
 
   // ---------- міні-карта ----------
   let miniDot;

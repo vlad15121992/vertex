@@ -297,7 +297,7 @@ route();
   lookFrom(SPOTS.entry[0], SPOTS.entry[1]);
 
   const fail = () => { loading.textContent = 'Модель не завантажилась. Оновіть сторінку.'; };
-  fetch('korobka.glb').then(async r => { if (!r.ok) throw new Error(r.status); const total = +r.headers.get('content-length') || 0, rd = r.body.getReader(), parts = []; let got = 0;
+  fetch('korobka.glb').then(async r => { if (!r.ok) throw new Error(r.status); const total = 2552172, rd = r.body.getReader(), parts = []; let got = 0;
     for (;;) { const { done, value } = await rd.read(); if (done) break; parts.push(value); got += value.length; loading.textContent = 'Завантажую модель… ' + (total ? Math.round(got / total * 100) + ' %' : (got / 1048576).toFixed(1) + ' МБ'); }
     const u = new Uint8Array(got); let o = 0; parts.forEach(p => { u.set(p, o); o += p.length; }); return u; }).then(u => {
   new THREE.GLTFLoader().parse(u.buffer, '', g => {

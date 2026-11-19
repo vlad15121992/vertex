@@ -114,7 +114,7 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
 
 <section class="view" id="v-tour">
   <h1>Квартира з меблями: прохід по кімнатах</h1>
-  <p class="lead">Модель збудована з узгодженого плану в реальних міліметрах: несучі стіни, перегородки 125 мм, вікна, дверні прорізи, стеля 2,79 м. Меблі розставлено за вашим плануванням. Кнопками під моделлю меблі й покриття підлоги можна вимкнути, щоб побачити порожню квартиру.</p>
+  <p class="lead">Модель збудована з узгодженого плану в реальних міліметрах: несучі стіни, перегородки 125 мм, вікна, дверні прорізи, чистова висота стелі 2,61–2,64 м. Меблі розставлено за вашим плануванням. Кнопками під моделлю меблі й покриття підлоги можна вимкнути, щоб побачити порожню квартиру.</p>
   <div class="stage" id="stage">
     <canvas id="cv"></canvas>
     <div class="loading" id="loading">Завантажую модель…</div>
@@ -148,7 +148,8 @@ ol.flow { margin: 0; padding-left: 20px; max-width: 80ch; display: flex; flex-di
   <div id="varNote" hidden></div>
   <p class="hint">Прохід: тягніть мишею або пальцем, щоб озирнутися; клацніть по підлозі, щоб підійти; клавіші W A S D або стрілки на екрані. Згори: тягніть, щоб обертати, коліщатко — масштаб.</p>
   <dl class="facts">
-    <div><dt>Висота стелі</dt><dd>2,79 м</dd></div>
+    <div><dt>Висота стелі чистова</dt><dd>2,61–2,64 м</dd></div>
+    <div><dt>Висота до оздоблення</dt><dd>2,79 м</dd></div>
     <div><dt>Дитяча</dt><dd>3550 × 3050 · ≈10,8 м²</dd></div>
     <div><dt>Спальня</dt><dd>≈14,9 м²</dd></div>
     <div><dt>Кухня-вітальня</dt><dd>≈18,9 м²</dd></div>
@@ -297,7 +298,7 @@ route();
   lookFrom(SPOTS.entry[0], SPOTS.entry[1]);
 
   const fail = () => { loading.textContent = 'Модель не завантажилась. Оновіть сторінку.'; };
-  fetch('korobka.glb').then(async r => { if (!r.ok) throw new Error(r.status); const total = 2552172, rd = r.body.getReader(), parts = []; let got = 0;
+  fetch('korobka.glb').then(async r => { if (!r.ok) throw new Error(r.status); const total = 2556332, rd = r.body.getReader(), parts = []; let got = 0;
     for (;;) { const { done, value } = await rd.read(); if (done) break; parts.push(value); got += value.length; loading.textContent = 'Завантажую модель… ' + (total ? Math.round(got / total * 100) + ' %' : (got / 1048576).toFixed(1) + ' МБ'); }
     const u = new Uint8Array(got); let o = 0; parts.forEach(p => { u.set(p, o); o += p.length; }); return u; }).then(u => {
   new THREE.GLTFLoader().parse(u.buffer, '', g => {
